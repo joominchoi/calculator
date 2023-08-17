@@ -25,6 +25,87 @@ header {
   width: 300px;
   border: 2px solid rgb(0, 0, 0);
   border-radius: 5px;
-  padding: 50px;
-  margin: 20px;
+  padding: 20px;
+}
+
+.display {
+  padding: 10px 20px;
+  border: 2px solid;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  background-color: white;
+  text-align: right;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.display-last {
+  min-height: 32px;
+  font-size: 20px;
+}
+
+.display-current {
+  min-height: 64px;
+  font-size: 40px;
+}
+
+.buttons-grid {
+  height: 65%;
+  /* margin-bottom: 10px; */
+}
+
+.clear-delete-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-template-rows: minmax(30px, auto) repeat(1, auto);
+  height: auto;
+  width: auto;
+  grid-gap: 20px;
+}
+
+.clear-button {
+  background-color: rgb(113, 229, 113);
+  cursor: pointer;
+  padding: 10px;
+  border: 2px black solid;
+  border-radius: 5px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.clear-button:hover {
+  background-color: rgb(60, 182, 60);
+}
+
+.delete-button {
+  background-color: rgb(231, 107, 107);
+  cursor: pointer;
+  padding: 10px;
+  border: 2px black solid;
+  border-radius: 5px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.delete-button:hover {
+  background-color: rgb(203, 66, 66);
+}
+
+.maths-buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+}
+
+.maths-buttons button {
+  padding: 7px;
+  border: 2px black solid;
+  border-radius: 5px;
+  background-color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.maths-buttons button:hover {
+  background-color: rgb(227, 227, 227);
 }
