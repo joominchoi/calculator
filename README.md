@@ -6,7 +6,7 @@ Building an on-screen calculator using JavaScript, HTML, and CSS
 [Project: Calculator](https://www.theodinproject.com/lessons/foundations-calculator)
 
 **WIP:**
-- Step 2
+- Step 4
 
 **Steps:**
 1. Your calculator is going to contain functions for all of the basic math operators you typically find on simple calculators, so start by creating functions for the following items and testing them in your browser’s console.
@@ -44,5 +44,6 @@ Building an on-screen calculator using JavaScript, HTML, and CSS
 **Learnings:**
 
 **Recapping:**
+- Use of switch statements
 
 
