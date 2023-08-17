@@ -1,6 +1,30 @@
+html,
+body {
+  height: 100vh
+}
+
 header {
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   display: flex;
   justify-content: center;
   font-size: 50px;
+}
+
+.main-container {
+  display: flex;
+  justify-content: center;
+  /* align-items: center;
+  height: 70%;
+  width: 100%; */
+  padding-top: 50px;
+}
+
+.calculator {
+  background-color: lightgrey;
+  height: 400px;
+  width: 300px;
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 5px;
+  padding: 50px;
+  margin: 20px;
 }
