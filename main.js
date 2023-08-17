@@ -13,3 +13,7 @@ function add(x, y) {
 function subtract(x, y) {
   return x - y
 }
+
+let firstOperand = ''
+let secondOperand = ''
+let operator = null
