@@ -103,16 +103,16 @@ header {
   background-color: rgb(176, 178, 178);
 }
 
-.operator-buttons {
+.operator-button {
   background-color: rgb(245, 142, 14);
   cursor: pointer;
   font-size: 25px;
 }
 
-.operator-buttons:hover {
+.operator-button:hover {
   background-color: rgb(245, 163, 63);
 }
 
-.operator-buttons:active {
+.operator-button:active {
   background-color: rgb(235, 129, 0);
 }
