@@ -20,23 +20,22 @@ header {
 }
 
 .calculator {
-  background-color: lightgrey;
+  background-color: rgb(81, 82, 82);
   height: 400px;
   width: 300px;
   border: 2px solid rgb(0, 0, 0);
-  border-radius: 5px;
   padding: 20px;
 }
 
 .display {
   padding: 10px 20px;
-  border: 2px solid;
-  border-radius: 5px;
+  border: 2px solid black;
   margin-bottom: 20px;
-  background-color: white;
+  background-color: rgb(98, 99, 99);
   text-align: right;
   word-wrap: break-word;
   word-break: break-all;
+  color: white;
 }
 
 .display-last {
@@ -57,7 +56,7 @@ header {
 .clear-delete-buttons {
   display: grid;
   grid-template-columns: repeat(2, auto);
-  grid-template-rows: minmax(30px, auto) repeat(1, auto);
+  grid-template-rows: minmax(35px, auto) repeat(1, auto);
   height: auto;
   width: auto;
   grid-gap: 20px;
@@ -65,10 +64,8 @@ header {
 
 .clear-button {
   background-color: rgb(113, 229, 113);
-  cursor: pointer;
   padding: 10px;
   border: 2px black solid;
-  border-radius: 5px;
   font-size: 20px;
   cursor: pointer;
 }
@@ -83,10 +80,8 @@ header {
 
 .delete-button {
   background-color: rgb(231, 107, 107);
-  cursor: pointer;
   padding: 10px;
   border: 2px black solid;
-  border-radius: 5px;
   font-size: 20px;
   cursor: pointer;
 }
@@ -102,22 +97,22 @@ header {
 .maths-buttons {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-gap: 10px;
+  /* grid-gap: 10px; */
 }
 
 .maths-buttons button {
-  padding: 7px;
+  padding: 11px;
   border: 2px black solid;
-  border-radius: 5px;
-  background-color: white;
+  background-color: rgb(124, 125, 125);
   font-size: 20px;
   cursor: pointer;
+  color: white;
 }
 
 .maths-buttons button:hover {
-  background-color: rgb(227, 227, 227);
+  background-color: rgb(150, 151, 151);
 }
 
 .maths-buttons button:active {
-  background-color: rgb(168, 168, 168);
+  background-color: rgb(176, 178, 178);
 }
