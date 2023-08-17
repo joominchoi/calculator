@@ -13,17 +13,16 @@ header {
 .main-container {
   display: flex;
   justify-content: center;
-  /* align-items: center;
-  height: 70%;
-  width: 100%; */
-  padding-top: 50px;
+  padding-top: 100px;
 }
 
 .calculator {
   background-color: rgb(81, 82, 82);
+  min-height: 400px;
+  min-width: 300px;
   height: 400px;
   width: 300px;
-  border: 2px solid rgb(0, 0, 0);
+  border: 2px solid rgb(78, 78, 78);
   border-radius: 10px;
   padding: 20px;
   box-shadow: 10px 10px 20px rgba(57, 57, 57, 0.875);
@@ -42,34 +41,30 @@ header {
 
 .display-last {
   min-height: 32px;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .display-current {
-  min-height: 64px;
+  min-height: 35px;
   font-size: 40px;
 }
 
 .buttons-grid {
-  height: 65%;
-  /* margin-bottom: 10px; */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  height: 69%;
 }
 
-.clear-delete-buttons {
-  display: grid;
-  grid-template-columns: repeat(2, auto);
-  grid-template-rows: minmax(35px, auto) repeat(1, auto);
-  height: auto;
-  width: auto;
-  grid-gap: 20px;
+.clear-button, .delete-button {
+  grid-column: span 2;
+  padding: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  margin-bottom: 20px;
 }
 
 .clear-button {
   background-color: rgb(113, 229, 113);
-  padding: 10px;
-  border: 2px black solid;
-  font-size: 20px;
-  cursor: pointer;
 }
 
 .clear-button:hover {
@@ -82,10 +77,6 @@ header {
 
 .delete-button {
   background-color: rgb(231, 107, 107);
-  padding: 10px;
-  border: 2px black solid;
-  font-size: 20px;
-  cursor: pointer;
 }
 
 .delete-button:hover {
@@ -96,25 +87,32 @@ header {
   background-color: rgb(194, 42, 42);
 }
 
-.maths-buttons {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  /* grid-gap: 10px; */
-}
-
-.maths-buttons button {
+.button {
   padding: 11px;
-  border: 2px black solid;
   background-color: rgb(124, 125, 125);
   font-size: 20px;
   cursor: pointer;
   color: white;
 }
 
-.maths-buttons button:hover {
+.button:hover {
   background-color: rgb(150, 151, 151);
 }
 
-.maths-buttons button:active {
+.button:active {
   background-color: rgb(176, 178, 178);
+}
+
+.operator-buttons {
+  background-color: rgb(245, 142, 14);
+  cursor: pointer;
+  font-size: 25px;
+}
+
+.operator-buttons:hover {
+  background-color: rgb(245, 163, 63);
+}
+
+.operator-buttons:active {
+  background-color: rgb(235, 129, 0);
 }
