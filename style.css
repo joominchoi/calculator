@@ -24,7 +24,9 @@ header {
   height: 400px;
   width: 300px;
   border: 2px solid rgb(0, 0, 0);
+  border-radius: 10px;
   padding: 20px;
+  box-shadow: 10px 10px 20px rgba(57, 57, 57, 0.875);
 }
 
 .display {
