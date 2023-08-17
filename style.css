@@ -74,7 +74,11 @@ header {
 }
 
 .clear-button:hover {
-  background-color: rgb(60, 182, 60);
+  background-color: rgb(56, 186, 56)
+}
+
+.clear-button:active {
+  background-color: rgb(28, 140, 28)
 }
 
 .delete-button {
@@ -88,7 +92,11 @@ header {
 }
 
 .delete-button:hover {
-  background-color: rgb(203, 66, 66);
+  background-color: rgb(210, 85, 85);
+}
+
+.delete-button:active {
+  background-color: rgb(194, 42, 42);
 }
 
 .maths-buttons {
@@ -108,4 +116,8 @@ header {
 
 .maths-buttons button:hover {
   background-color: rgb(227, 227, 227);
+}
+
+.maths-buttons button:active {
+  background-color: rgb(168, 168, 168);
 }
