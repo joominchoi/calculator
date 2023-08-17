@@ -14,6 +14,21 @@ function subtract(x, y) {
   return x - y
 }
 
-let firstOperand = ''
-let secondOperand = ''
-let operator = null
+let firstOperand = Number
+let secondOperand = Number
+let operator = ''
+
+function operate(x, y, operator) {
+  switch (operator) {
+    case '/':
+      return divide(x, y)
+    case '*':
+      return multiply(x, y)
+    case '+':
+      return add(x, y)
+    case '-':
+      return subtract(x, y)
+    default:
+      return null
+  }
+}
