@@ -1,18 +1,23 @@
 let firstOperand = Number
 let secondOperand = Number
 let operator = ''
-let displayValue = ''
 let displayCurrent = document.getElementById('display-current')
 let one = document.getElementById('one')
 
-function populateDisplay() {
-  displayCurrent.innerHTML = Text
-}
+displayCurrent.innerHTML = '0'
 
-one.addEventListener("click", myFunc);
+let displayValue = displayCurrent.innerHTML
 
-function myFunc() {
-  displayCurrent.innerHTML = '1'
+console.log(displayValue)
+
+one.addEventListener("click", function() {
+  displayValue = one.innerHTML
+  updateDisplay(one.innerHTML)
+  console.log(displayValue)
+});
+
+function updateDisplay(value) {
+  displayCurrent.innerHTML = value
 }
 
 function divide(x, y) {
