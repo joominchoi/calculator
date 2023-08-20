@@ -9,19 +9,6 @@ let numberButtons = document.getElementsByClassName('number-button')
 let displayValue = '0'
 displayCurrent.innerHTML = '0'
 
-function numberInput() {
-	for (let numberButton of numberButtons) {
-		numberButton.addEventListener(
-			"click",
-			(event) => {
-				updateValue(numberButton.innerHTML)
-        console.log(displayValue)
-        console.log(displayCurrent.innerHTML)
-			}
-		)
-	}
-}
-
 clearButton.addEventListener("click", function () {
   clear()
   console.log(displayValue)
@@ -31,6 +18,17 @@ clearButton.addEventListener("click", function () {
 deleteButton.addEventListener("click", function () {
   deleteLastNumber()
 });
+
+for (let numberButton of numberButtons) {
+  numberButton.addEventListener(
+    "click",
+    () => {
+      updateValue(numberButton.innerHTML)
+      console.log(displayValue)
+      console.log(displayCurrent.innerHTML)
+    }
+  )
+}
 
 function updateValue(value) {
   if (displayValue === '0') {
@@ -91,8 +89,3 @@ function operate(x, y, operator) {
       return null
   }
 }
-
-window.onload = () => {
-	numberInput()
-}
-
