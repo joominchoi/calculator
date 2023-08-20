@@ -55,7 +55,7 @@ header {
   height: 69%;
 }
 
-.clear-button, .delete-button {
+#clear-button, #delete-button {
   grid-column: span 2;
   padding: 10px;
   font-size: 20px;
@@ -63,27 +63,27 @@ header {
   margin-bottom: 20px;
 }
 
-.clear-button {
+#clear-button {
   background-color: rgb(113, 229, 113);
 }
 
-.clear-button:hover {
+#clear-button:hover {
   background-color: rgb(56, 186, 56)
 }
 
-.clear-button:active {
+#clear-button:active {
   background-color: rgb(28, 140, 28)
 }
 
-.delete-button {
+#delete-button {
   background-color: rgb(231, 107, 107);
 }
 
-.delete-button:hover {
+#delete-button:hover {
   background-color: rgb(210, 85, 85);
 }
 
-.delete-button:active {
+#delete-button:active {
   background-color: rgb(194, 42, 42);
 }
 

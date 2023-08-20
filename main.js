@@ -2,6 +2,8 @@ let firstOperand = Number
 let secondOperand = Number
 let operator = ''
 let displayCurrent = document.getElementById('display-current')
+let clearButton = document.getElementById('clear-button')
+let deleteButton = document.getElementById('delete-button')
 let one = document.getElementById('one')
 
 displayCurrent.innerHTML = '0'
@@ -58,12 +60,31 @@ nine.addEventListener("click", function() {
   updateDisplay(nine.innerHTML)
 });
 
+clearButton.addEventListener("click", function() {
+  clear()
+  console.log(displayValue)
+});
+
+deleteButton.addEventListener("click", function() {
+  deleteNumber()
+});
 
 function updateDisplay(value) {
   if (displayCurrent.innerHTML === '0') {
     displayCurrent.innerHTML = value
   } else if (displayCurrent.innerHTML.length <= 11) {
     displayCurrent.innerHTML += value
+  }
+}
+
+function clear() {
+  displayValue = 0
+  displayCurrent.innerHTML = 0
+}
+
+function deleteNumber() {
+  if (displayCurrent.innerHTML.length <= 1) {
+    displayCurrent.innerHTML = 0
   }
 }
 
