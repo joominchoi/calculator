@@ -62,7 +62,7 @@ nine.addEventListener("click", function() {
 function updateDisplay(value) {
   if (displayCurrent.innerHTML === '0') {
     displayCurrent.innerHTML = value
-  } else {
+  } else if (displayCurrent.innerHTML.length <= 11) {
     displayCurrent.innerHTML += value
   }
 }
