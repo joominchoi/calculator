@@ -97,7 +97,15 @@ function clear() {
 
 function deleteNumber() {
   if (displayCurrent.innerHTML.length <= 1) {
-    displayCurrent.innerHTML = '0'
+    clear()
+    console.log(displayValue);
+    console.log(displayCurrent.innerHTML);
+  } else {
+    newString = displayValue.slice(0, -1);
+    displayValue = newString
+    displayCurrent.innerHTML = newString
+    console.log(displayValue);
+    console.log(displayCurrent.innerHTML);
   }
 }
 
