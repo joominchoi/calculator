@@ -46,5 +46,6 @@ Building an on-screen calculator using JavaScript, HTML, and CSS
 
 **Recapping:**
 - Use of switch statements
+- Using for loop to add similar eventlistener to buttons
 
 

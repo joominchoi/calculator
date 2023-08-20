@@ -87,7 +87,7 @@ header {
   background-color: rgb(194, 42, 42);
 }
 
-.button {
+.number-button {
   padding: 11px;
   background-color: rgb(124, 125, 125);
   font-size: 20px;
@@ -95,11 +95,11 @@ header {
   color: white;
 }
 
-.button:hover {
+.number-button:hover {
   background-color: rgb(150, 151, 151);
 }
 
-.button:active {
+.number-button:active {
   background-color: rgb(176, 178, 178);
 }
 
