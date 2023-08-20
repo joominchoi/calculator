@@ -8,8 +8,6 @@ displayCurrent.innerHTML = '0'
 
 let displayValue = displayCurrent.innerHTML
 
-console.log(displayValue)
-
 zero.addEventListener("click", function() {
   displayValue = zero.innerHTML
   updateDisplay(zero.innerHTML)
@@ -62,7 +60,11 @@ nine.addEventListener("click", function() {
 
 
 function updateDisplay(value) {
-  displayCurrent.innerHTML = value
+  if (displayCurrent.innerHTML === '0') {
+    displayCurrent.innerHTML = value
+  } else {
+    displayCurrent.innerHTML += value
+  }
 }
 
 function divide(x, y) {
