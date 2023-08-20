@@ -11,86 +11,81 @@ displayCurrent.innerHTML = '0'
 let displayValue = '0'
 
 zero.addEventListener("click", function () {
-  updateDisplayValue(zero.innerHTML)
-  updateDisplay(zero.innerHTML)
+  updateValueupdateValue(zero.innerHTML)
   console.log(displayValue)
+  console.log(displayCurrent.innerHTML)
 });
 
 one.addEventListener("click", function () {
-  updateDisplayValue(one.innerHTML)
-  updateDisplay(one.innerHTML)
+  updateValue(one.innerHTML)
   console.log(displayValue)
+  console.log(displayCurrent.innerHTML)
 });
 
 two.addEventListener("click", function () {
-  updateDisplayValue(two.innerHTML)
-  updateDisplay(two.innerHTML)
+  updateValue(two.innerHTML)
   console.log(displayValue)
+  console.log(displayCurrent.innerHTML)
 });
 
 three.addEventListener("click", function () {
-  updateDisplayValue(three.innerHTML)
-  updateDisplay(three.innerHTML)
+  updateValue(three.innerHTML)
   console.log(displayValue)
+  console.log(displayCurrent.innerHTML)
 });
 
 four.addEventListener("click", function () {
-  updateDisplayValue(four.innerHTML)
-  updateDisplay(four.innerHTML)
+  updateValue(four.innerHTML)
   console.log(displayValue)
+  console.log(displayCurrent.innerHTML)
 });
 
 five.addEventListener("click", function () {
-  updateDisplayValue(five.innerHTML)
-  updateDisplay(five.innerHTML)
+  updateValue(five.innerHTML)
   console.log(displayValue)
+  console.log(displayCurrent.innerHTML)
 });
 
 six.addEventListener("click", function () {
-  updateDisplayValue(six.innerHTML)
-  updateDisplay(six.innerHTML)
+  updateValue(six.innerHTML)
   console.log(displayValue)
+  console.log(displayCurrent.innerHTML)
 });
 
 seven.addEventListener("click", function () {
-  updateDisplayValue(seven.innerHTML)
-  updateDisplay(seven.innerHTML)
+  updateValue(seven.innerHTML)
   console.log(displayValue)
+  console.log(displayCurrent.innerHTML)
 });
 
 eight.addEventListener("click", function () {
-  updateDisplayValue(eight.innerHTML)
-  updateDisplay(eight.innerHTML)
+  updateValue(eight.innerHTML)
   console.log(displayValue)
+  console.log(displayCurrent.innerHTML)
 });
 
 nine.addEventListener("click", function () {
-  updateDisplayValue(nine.innerHTML)
-  updateDisplay(nine.innerHTML)
+  updateValue(nine.innerHTML)
   console.log(displayValue)
+  console.log(displayCurrent.innerHTML)
 });
 
 clearButton.addEventListener("click", function () {
   clear()
   console.log(displayValue)
+  console.log(displayCurrent.innerHTML)
 });
 
 deleteButton.addEventListener("click", function () {
   deleteNumber()
 });
 
-function updateDisplayValue(value) {
+function updateValue(value) {
   if (displayValue === '0') {
     displayValue = value
+    displayCurrent.innerHTML = value
   } else if (displayValue.length <= 11) {
     displayValue += value
-  }
-}
-
-function updateDisplay(value) {
-  if (displayCurrent.innerHTML === '0') {
-    displayCurrent.innerHTML = value
-  } else if (displayCurrent.innerHTML.length <= 11) {
     displayCurrent.innerHTML += value
   }
 }
@@ -98,7 +93,6 @@ function updateDisplay(value) {
 function clear() {
   displayValue = '0'
   displayCurrent.innerHTML = '0'
-  console.log(typeof displayCurrent.innerHTML)
 }
 
 function deleteNumber() {
