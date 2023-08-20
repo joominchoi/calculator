@@ -6,9 +6,10 @@ let clearButton = document.getElementById('clear-button')
 let deleteButton = document.getElementById('delete-button')
 let one = document.getElementById('one')
 
+let displayValue = '0'
 displayCurrent.innerHTML = '0'
 
-let displayValue = '0'
+
 
 zero.addEventListener("click", function () {
   updateValueupdateValue(zero.innerHTML)
@@ -77,7 +78,7 @@ clearButton.addEventListener("click", function () {
 });
 
 deleteButton.addEventListener("click", function () {
-  deleteNumber()
+  deleteLastNumber()
 });
 
 function updateValue(value) {
@@ -95,7 +96,7 @@ function clear() {
   displayCurrent.innerHTML = '0'
 }
 
-function deleteNumber() {
+function deleteLastNumber() {
   if (displayCurrent.innerHTML.length <= 1) {
     clear()
     console.log(displayValue);
