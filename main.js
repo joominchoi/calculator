@@ -115,6 +115,8 @@ function divide(firstOperand, secondOperand) {
   firstOperand = Number(firstOperand)
   secondOperand = Number(secondOperand)
   answer = (firstOperand / secondOperand).toString()
+  firstOperand = answer
+  secondOperand = '0'
   console.log(`firstOperand = ${firstOperand}`)
   console.log(`secondOperand = ${secondOperand}`)
   console.log(`operator = ${operator}`)
@@ -125,6 +127,8 @@ function multiply(firstOperand, secondOperand) {
   firstOperand = Number(firstOperand)
   secondOperand = Number(secondOperand)
   answer = (firstOperand * secondOperand).toString()
+  firstOperand = answer
+  secondOperand = '0'
   console.log(`firstOperand = ${firstOperand}`)
   console.log(`secondOperand = ${secondOperand}`)
   console.log(`operator = ${operator}`)
@@ -135,6 +139,8 @@ function add(firstOperand, secondOperand) {
   firstOperand = Number(firstOperand)
   secondOperand = Number(secondOperand)
   answer = (firstOperand + secondOperand).toString()
+  firstOperand = answer
+  secondOperand = '0'
   console.log(`firstOperand = ${firstOperand}`)
   console.log(`secondOperand = ${secondOperand}`)
   console.log(`operator = ${operator}`)
@@ -145,6 +151,8 @@ function subtract(firstOperand, secondOperand) {
   firstOperand = Number(firstOperand)
   secondOperand = Number(secondOperand)
   answer = (firstOperand - secondOperand).toString()
+  firstOperand = answer
+  secondOperand = '0'
   console.log(`firstOperand = ${firstOperand}`)
   console.log(`secondOperand = ${secondOperand}`)
   console.log(`operator = ${operator}`)
