@@ -14,8 +14,10 @@ displayCurrent.innerHTML = '0'
 clearButton.addEventListener("click", function () {
   clear()
   console.log(`firstOperand = ${firstOperand}`)
-  console.log(`displayValue = ${displayCurrent.innerHTML}`)
+  console.log(`secondOperand = ${secondOperand}`)
   console.log(`operator = ${operator}`)
+  console.log(`answer = ${answer}`)
+  console.log(`displayValue = ${displayCurrent.innerHTML}`)
 });
 
 deleteButton.addEventListener("click", function () {
@@ -23,6 +25,7 @@ deleteButton.addEventListener("click", function () {
   console.log(`firstOperand = ${firstOperand}`)
   console.log(`secondOperand = ${secondOperand}`)
   console.log(`operator = ${operator}`)
+  console.log(`answer = ${answer}`)
   console.log(`displayValue = ${displayCurrent.innerHTML}`)
 });
 
@@ -32,9 +35,10 @@ for (let numberButton of numberButtons) {
     () => {
       updateValue(numberButton.innerHTML)
       console.log(`firstOperand = ${firstOperand}`)
-      console.log(`secondOperand = ${secondOperand}`)
-      console.log(`operator = ${operator}`)
-      console.log(`displayValue = ${displayCurrent.innerHTML}`)
+  console.log(`secondOperand = ${secondOperand}`)
+  console.log(`operator = ${operator}`)
+  console.log(`answer = ${answer}`)
+  console.log(`displayValue = ${displayCurrent.innerHTML}`)
     }
   )
 }
@@ -45,20 +49,21 @@ for (let operatorButton of operatorButtons) {
     () => {
       operator = operatorButton.innerHTML
       console.log(`firstOperand = ${firstOperand}`)
-      console.log(`secondOperand = ${secondOperand}`)
-      console.log(`operator = ${operator}`)
-      console.log(`displayValue = ${displayCurrent.innerHTML}`)
+  console.log(`secondOperand = ${secondOperand}`)
+  console.log(`operator = ${operator}`)
+  console.log(`answer = ${answer}`)
+  console.log(`displayValue = ${displayCurrent.innerHTML}`)
     }
   )
 }
 
 equalButton.addEventListener("click", function () {
   operate(firstOperand, secondOperand, operator)
-  
+
 });
 
 function updateValue(value) {
-  if ((operator === '') && (firstOperand === '0') ) {
+  if ((operator === '') && (firstOperand === '0')) {
     firstOperand = value
     displayCurrent.innerHTML = value
   } else if ((operator === '') && (firstOperand.length <= 11)) {
@@ -94,44 +99,56 @@ function divide(firstOperand, secondOperand) {
   firstOperand = Number(firstOperand)
   secondOperand = Number(secondOperand)
   answer = (firstOperand / secondOperand).toString()
-  console.log(typeof answer)
-  console.log(answer)
+  console.log(`firstOperand = ${firstOperand}`)
+  console.log(`secondOperand = ${secondOperand}`)
+  console.log(`operator = ${operator}`)
+  console.log(`answer = ${answer}`)
 }
 
 function multiply(firstOperand, secondOperand) {
   firstOperand = Number(firstOperand)
   secondOperand = Number(secondOperand)
   answer = (firstOperand * secondOperand).toString()
-  console.log(typeof answer)
-  console.log(answer)
+  console.log(`firstOperand = ${firstOperand}`)
+  console.log(`secondOperand = ${secondOperand}`)
+  console.log(`operator = ${operator}`)
+  console.log(`answer = ${answer}`)
 }
 
 function add(firstOperand, secondOperand) {
   firstOperand = Number(firstOperand)
   secondOperand = Number(secondOperand)
   answer = (firstOperand + secondOperand).toString()
-  console.log(typeof answer)
-  console.log(answer)
+  console.log(`firstOperand = ${firstOperand}`)
+  console.log(`secondOperand = ${secondOperand}`)
+  console.log(`operator = ${operator}`)
+  console.log(`answer = ${answer}`)
 }
 
 function subtract(firstOperand, secondOperand) {
   firstOperand = Number(firstOperand)
   secondOperand = Number(secondOperand)
   answer = (firstOperand - secondOperand).toString()
-  console.log(typeof answer)
-  console.log(answer)
+  console.log(`firstOperand = ${firstOperand}`)
+  console.log(`secondOperand = ${secondOperand}`)
+  console.log(`operator = ${operator}`)
+  console.log(`answer = ${answer}`)
 }
 
 function operate(x, y, operator) {
   switch (operator) {
     case '÷':
-      return divide(x, y)
+      divide(x, y)
+      return displayCurrent.innerHTML = answer
     case 'x':
-      return multiply(x, y)
+      multiply(x, y)
+      return displayCurrent.innerHTML = answer
     case '+':
-      return add(x, y)
+      add(x, y)
+      return displayCurrent.innerHTML = answer
     case '-':
-      return subtract(x, y)
+      subtract(x, y)
+      return displayCurrent.innerHTML = answer
     default:
       return null
   }
