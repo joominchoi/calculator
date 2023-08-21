@@ -74,20 +74,20 @@ function updateValue(value) {
     firstOperand = answer
     secondOperand = value
     displayCurrent.innerHTML = value
-  } else if ((answer != '') && (secondOperand.length <= 11)) {
+  } else if (answer != '') {
     secondOperand += value
     displayCurrent.innerHTML += value
   }
   else if ((operator === '') && (firstOperand === '0')) {
     firstOperand = value
     displayCurrent.innerHTML = value
-  } else if ((operator === '') && (firstOperand.length <= 11)) {
+  } else if (operator === '') {
     firstOperand += value
     displayCurrent.innerHTML += value
   } else if ((operator != '') && (secondOperand === '0')) {
     secondOperand = value
     displayCurrent.innerHTML = value
-  } else if ((operator != '') && (secondOperand.length <= 11)) {
+  } else if (operator != '') {
     secondOperand += value
     displayCurrent.innerHTML += value
   }
