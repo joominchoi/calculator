@@ -116,8 +116,6 @@ function divide(firstOperand, secondOperand) {
   firstOperand = Number(firstOperand)
   secondOperand = Number(secondOperand)
   answer = (firstOperand / secondOperand).toString()
-  firstOperand = answer
-  secondOperand = '0'
   deleteButton.disabled = true
   console.log(`firstOperand = ${firstOperand}`)
   console.log(`secondOperand = ${secondOperand}`)
@@ -129,8 +127,6 @@ function multiply(firstOperand, secondOperand) {
   firstOperand = Number(firstOperand)
   secondOperand = Number(secondOperand)
   answer = (firstOperand * secondOperand).toString()
-  firstOperand = answer
-  secondOperand = '0'
   deleteButton.disabled = true
   console.log(`firstOperand = ${firstOperand}`)
   console.log(`secondOperand = ${secondOperand}`)
@@ -142,8 +138,6 @@ function add(firstOperand, secondOperand) {
   firstOperand = Number(firstOperand)
   secondOperand = Number(secondOperand)
   answer = (firstOperand + secondOperand).toString()
-  firstOperand = answer
-  secondOperand = '0'
   deleteButton.disabled = true
   console.log(`firstOperand = ${firstOperand}`)
   console.log(`secondOperand = ${secondOperand}`)
@@ -155,8 +149,6 @@ function subtract(firstOperand, secondOperand) {
   firstOperand = Number(firstOperand)
   secondOperand = Number(secondOperand)
   answer = (firstOperand - secondOperand).toString()
-  firstOperand = answer
-  secondOperand = '0'
   deleteButton.disabled = true
   console.log(`firstOperand = ${firstOperand}`)
   console.log(`secondOperand = ${secondOperand}`)
