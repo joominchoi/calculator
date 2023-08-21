@@ -11,12 +11,17 @@ displayCurrent.innerHTML = '0'
 
 clearButton.addEventListener("click", function () {
   clear()
-  console.log(firstOperand)
-  console.log(displayCurrent.innerHTML)
+  console.log(`firstOperand = ${firstOperand}`)
+  console.log(`displayValue = ${displayCurrent.innerHTML}`)
+  console.log(`operator = ${operator}`)
 });
 
 deleteButton.addEventListener("click", function () {
   deleteLastNumber()
+  console.log(`firstOperand = ${firstOperand}`)
+  console.log(`secondOperand = ${secondOperand}`)
+  console.log(`operator = ${operator}`)
+  console.log(`displayValue = ${displayCurrent.innerHTML}`)
 });
 
 for (let numberButton of numberButtons) {
@@ -24,8 +29,10 @@ for (let numberButton of numberButtons) {
     "click",
     () => {
       updateValue(numberButton.innerHTML)
-      console.log(firstOperand)
-      console.log(displayCurrent.innerHTML)
+      console.log(`firstOperand = ${firstOperand}`)
+      console.log(`secondOperand = ${secondOperand}`)
+      console.log(`operator = ${operator}`)
+      console.log(`displayValue = ${displayCurrent.innerHTML}`)
     }
   )
 }
@@ -35,17 +42,26 @@ for (let operatorButton of operatorButtons) {
     "click",
     () => {
       operator = operatorButton.innerHTML
-      console.log(operator)
+      console.log(`firstOperand = ${firstOperand}`)
+      console.log(`secondOperand = ${secondOperand}`)
+      console.log(`operator = ${operator}`)
+      console.log(`displayValue = ${displayCurrent.innerHTML}`)
     }
   )
 }
 
 function updateValue(value) {
-  if (firstOperand === '0') {
+  if ((operator === '') && (firstOperand === '0') ) {
     firstOperand = value
     displayCurrent.innerHTML = value
-  } else if (firstOperand.length <= 11) {
+  } else if ((operator === '') && (firstOperand.length <= 11)) {
     firstOperand += value
+    displayCurrent.innerHTML += value
+  } else if ((operator != '') && (secondOperand === '0')) {
+    secondOperand = value
+    displayCurrent.innerHTML = value
+  } else if ((operator != '') && (secondOperand.length <= 11)) {
+    secondOperand += value
     displayCurrent.innerHTML += value
   }
 }
@@ -60,14 +76,10 @@ function clear() {
 function deleteLastNumber() {
   if (displayCurrent.innerHTML.length <= 1) {
     clear()
-    console.log(firstOperand);
-    console.log(displayCurrent.innerHTML);
   } else {
     newString = firstOperand.slice(0, -1);
     firstOperand = newString
     displayCurrent.innerHTML = newString
-    console.log(firstOperand);
-    console.log(displayCurrent.innerHTML);
   }
 }
 
