@@ -52,7 +52,8 @@ for (let operatorButton of operatorButtons) {
 }
 
 equalButton.addEventListener("click", function () {
-  console.log('Equal button has been clicked')
+  operate(firstOperand, secondOperand, operator)
+  
 });
 
 function updateValue(value) {
@@ -88,27 +89,35 @@ function deleteLastNumber() {
   }
 }
 
-function divide(x, y) {
-  return x / y
+function divide(firstOperand, secondOperand) {
+  firstOperand = Number(firstOperand)
+  secondOperand = Number(secondOperand)
+  console.log(firstOperand / secondOperand)
 }
 
-function multiply(x, y) {
-  return x * y
+function multiply(firstOperand, secondOperand) {
+  firstOperand = Number(firstOperand)
+  secondOperand = Number(secondOperand)
+  console.log(firstOperand * secondOperand)
 }
 
-function add(x, y) {
-  return x + y
+function add(firstOperand, secondOperand) {
+  firstOperand = Number(firstOperand)
+  secondOperand = Number(secondOperand)
+  console.log(firstOperand + secondOperand)
 }
 
-function subtract(x, y) {
-  return x - y
+function subtract(firstOperand, secondOperand) {
+  firstOperand = Number(firstOperand)
+  secondOperand = Number(secondOperand)
+  console.log(firstOperand - secondOperand)
 }
 
 function operate(x, y, operator) {
   switch (operator) {
-    case '/':
+    case '÷':
       return divide(x, y)
-    case '*':
+    case 'x':
       return multiply(x, y)
     case '+':
       return add(x, y)
