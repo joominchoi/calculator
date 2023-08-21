@@ -5,6 +5,7 @@ let displayCurrent = document.getElementById('display-current')
 let clearButton = document.getElementById('clear-button')
 let deleteButton = document.getElementById('delete-button')
 let numberButtons = document.getElementsByClassName('number-button')
+let operatorButtons = document.getElementsByClassName('operator-button')
 
 displayCurrent.innerHTML = '0'
 
@@ -25,6 +26,16 @@ for (let numberButton of numberButtons) {
       updateValue(numberButton.innerHTML)
       console.log(firstOperand)
       console.log(displayCurrent.innerHTML)
+    }
+  )
+}
+
+for (let operatorButton of operatorButtons) {
+  operatorButton.addEventListener(
+    "click",
+    () => {
+      operator = operatorButton.innerHTML
+      console.log(operator)
     }
   )
 }
