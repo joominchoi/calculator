@@ -97,6 +97,7 @@ function clear() {
   firstOperand = '0'
   secondOperand = '0'
   operator = ''
+  answer = ''
   displayCurrent.innerHTML = '0'
 }
 
