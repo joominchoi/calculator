@@ -17,7 +17,6 @@ clearButton.addEventListener("click", function () {
   console.log(`secondOperand = ${secondOperand}`)
   console.log(`operator = ${operator}`)
   console.log(`answer = ${answer}`)
-  console.log(`displayValue = ${displayCurrent.innerHTML}`)
 });
 
 deleteButton.addEventListener("click", function () {
@@ -26,7 +25,6 @@ deleteButton.addEventListener("click", function () {
   console.log(`secondOperand = ${secondOperand}`)
   console.log(`operator = ${operator}`)
   console.log(`answer = ${answer}`)
-  console.log(`displayValue = ${displayCurrent.innerHTML}`)
 });
 
 for (let numberButton of numberButtons) {
@@ -35,10 +33,9 @@ for (let numberButton of numberButtons) {
     () => {
       updateValue(numberButton.innerHTML)
       console.log(`firstOperand = ${firstOperand}`)
-  console.log(`secondOperand = ${secondOperand}`)
-  console.log(`operator = ${operator}`)
-  console.log(`answer = ${answer}`)
-  console.log(`displayValue = ${displayCurrent.innerHTML}`)
+      console.log(`secondOperand = ${secondOperand}`)
+      console.log(`operator = ${operator}`)
+      console.log(`answer = ${answer}`)
     }
   )
 }
@@ -47,12 +44,22 @@ for (let operatorButton of operatorButtons) {
   operatorButton.addEventListener(
     "click",
     () => {
-      operator = operatorButton.innerHTML
-      console.log(`firstOperand = ${firstOperand}`)
-  console.log(`secondOperand = ${secondOperand}`)
-  console.log(`operator = ${operator}`)
-  console.log(`answer = ${answer}`)
-  console.log(`displayValue = ${displayCurrent.innerHTML}`)
+      if (operator != '') {
+        operator = operatorButton.innerHTML
+        firstOperand = answer
+        secondOperand = '0'
+        console.log(`firstOperand = ${firstOperand}`)
+        console.log(`secondOperand = ${secondOperand}`)
+        console.log(`operator = ${operator}`)
+        console.log(`answer = ${answer}`)
+      }
+      else if (operator === '') {
+        operator = operatorButton.innerHTML
+        console.log(`firstOperand = ${firstOperand}`)
+        console.log(`secondOperand = ${secondOperand}`)
+        console.log(`operator = ${operator}`)
+        console.log(`answer = ${answer}`)
+      }
     }
   )
 }
@@ -63,7 +70,15 @@ equalButton.addEventListener("click", function () {
 });
 
 function updateValue(value) {
-  if ((operator === '') && (firstOperand === '0')) {
+  if ((answer != '') && (secondOperand === '0')) {
+    firstOperand = answer
+    secondOperand = value
+    displayCurrent.innerHTML = value
+  } else if ((answer != '') && (secondOperand.length <= 11)) {
+    secondOperand += value
+    displayCurrent.innerHTML += value
+  }
+  else if ((operator === '') && (firstOperand === '0')) {
     firstOperand = value
     displayCurrent.innerHTML = value
   } else if ((operator === '') && (firstOperand.length <= 11)) {
