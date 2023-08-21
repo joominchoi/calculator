@@ -41,6 +41,7 @@ Building an on-screen calculator using JavaScript, HTML, and CSS
 
 **Thoughts:**
 - As always, do not try to write 'perfect' code. Get the program working first and then thinking about refactoring and optimising!
+- Sometimes (or many times) I will spend hours trying out different solutions for a specific problem, adding and deleting code, only for the solution to be one line of code; but remember, I would not have come to this solution without the hours of struggle and once I reach the solution, I will understand it better.
 
 **Learnings:**
 - Using *grid-column: span 2* to make element take up 2 column spaces
