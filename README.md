@@ -45,6 +45,8 @@ Building an on-screen calculator using JavaScript, HTML, and CSS
 **Learnings:**
 - Using *grid-column: span 2* to make element take up 2 column spaces
 - How to remove last character from string
+- Classes can be assigned to multiple elements, ID is specific to a single element
+- document.getElementsByClassName returns an *array* of elements
 
 **Recapping:**
 - Use of switch statements

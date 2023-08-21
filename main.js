@@ -6,6 +6,7 @@ let clearButton = document.getElementById('clear-button')
 let deleteButton = document.getElementById('delete-button')
 let numberButtons = document.getElementsByClassName('number-button')
 let operatorButtons = document.getElementsByClassName('operator-button')
+let equalButton = document.getElementById('equal-button')
 
 displayCurrent.innerHTML = '0'
 
@@ -49,6 +50,10 @@ for (let operatorButton of operatorButtons) {
     }
   )
 }
+
+equalButton.addEventListener("click", function () {
+  console.log('Equal button has been clicked')
+});
 
 function updateValue(value) {
   if ((operator === '') && (firstOperand === '0') ) {
