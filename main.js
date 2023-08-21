@@ -52,6 +52,8 @@ function updateValue(value) {
 
 function clear() {
   firstOperand = '0'
+  secondOperand = '0'
+  operator = ''
   displayCurrent.innerHTML = '0'
 }
 
