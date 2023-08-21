@@ -98,6 +98,7 @@ function clear() {
   secondOperand = '0'
   operator = ''
   answer = ''
+  deleteButton.disabled = false
   displayCurrent.innerHTML = '0'
 }
 
@@ -117,6 +118,7 @@ function divide(firstOperand, secondOperand) {
   answer = (firstOperand / secondOperand).toString()
   firstOperand = answer
   secondOperand = '0'
+  deleteButton.disabled = true
   console.log(`firstOperand = ${firstOperand}`)
   console.log(`secondOperand = ${secondOperand}`)
   console.log(`operator = ${operator}`)
@@ -129,6 +131,7 @@ function multiply(firstOperand, secondOperand) {
   answer = (firstOperand * secondOperand).toString()
   firstOperand = answer
   secondOperand = '0'
+  deleteButton.disabled = true
   console.log(`firstOperand = ${firstOperand}`)
   console.log(`secondOperand = ${secondOperand}`)
   console.log(`operator = ${operator}`)
@@ -141,6 +144,7 @@ function add(firstOperand, secondOperand) {
   answer = (firstOperand + secondOperand).toString()
   firstOperand = answer
   secondOperand = '0'
+  deleteButton.disabled = true
   console.log(`firstOperand = ${firstOperand}`)
   console.log(`secondOperand = ${secondOperand}`)
   console.log(`operator = ${operator}`)
@@ -153,6 +157,7 @@ function subtract(firstOperand, secondOperand) {
   answer = (firstOperand - secondOperand).toString()
   firstOperand = answer
   secondOperand = '0'
+  deleteButton.disabled = true
   console.log(`firstOperand = ${firstOperand}`)
   console.log(`secondOperand = ${secondOperand}`)
   console.log(`operator = ${operator}`)
