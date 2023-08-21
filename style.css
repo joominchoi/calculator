@@ -55,7 +55,8 @@ header {
   height: 69%;
 }
 
-#clear-button, #delete-button {
+#clear-button,
+#delete-button {
   grid-column: span 2;
   padding: 10px;
   font-size: 20px;
@@ -87,7 +88,9 @@ header {
   background-color: rgb(194, 42, 42);
 }
 
-.number-button {
+.number-button,
+.decimal-button,
+.equal-button {
   padding: 11px;
   background-color: rgb(124, 125, 125);
   font-size: 20px;
@@ -95,11 +98,15 @@ header {
   color: white;
 }
 
-.number-button:hover {
+.number-button:hover,
+.decimal-button:hover,
+.equal-button:hover {
   background-color: rgb(150, 151, 151);
 }
 
-.number-button:active {
+.number-button:active,
+.decimal-button:active,
+.equal-button:active {
   background-color: rgb(176, 178, 178);
 }
 
