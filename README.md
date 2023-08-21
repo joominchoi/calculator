@@ -5,6 +5,20 @@ Building an on-screen calculator using JavaScript, HTML, and CSS
 **Course reference pages:** \
 [Project: Calculator](https://www.theodinproject.com/lessons/foundations-calculator)
 
+**Thoughts:**
+- As always, do not try to write 'perfect' code. Get the program working first and then thinking about refactoring and optimising!
+- Sometimes (or many times) I will spend hours trying out different solutions for a specific problem, adding and deleting code, only for the solution to be one line of code; but remember, I would not have come to this solution without the hours of struggle and once I reach the solution, I will understand it better.
+
+**Learnings:**
+- Using *grid-column: span 2* to make element take up 2 column spaces
+- How to remove last character from string
+- Classes can be assigned to multiple elements, ID is specific to a single element
+- document.getElementsByClassName returns an *array* of elements
+
+**Recapping:**
+- Use of switch statements
+- Using for loop to add similar eventlistener to buttons
+
 **WIP:**
 - Step 6
 
@@ -37,20 +51,3 @@ Building an on-screen calculator using JavaScript, HTML, and CSS
 2. Make it look nice! This is a great project to practice your CSS skills. At least make the operations a different color from the keypad buttons.
 3. Add a “backspace” button, so the user can undo if they click the wrong number.
 4. Add keyboard support! You might run into an issue where keys such as (/) might cause you some trouble. Read the MDN documentation for event.preventDefault to help solve this problem.
-
-
-**Thoughts:**
-- As always, do not try to write 'perfect' code. Get the program working first and then thinking about refactoring and optimising!
-- Sometimes (or many times) I will spend hours trying out different solutions for a specific problem, adding and deleting code, only for the solution to be one line of code; but remember, I would not have come to this solution without the hours of struggle and once I reach the solution, I will understand it better.
-
-**Learnings:**
-- Using *grid-column: span 2* to make element take up 2 column spaces
-- How to remove last character from string
-- Classes can be assigned to multiple elements, ID is specific to a single element
-- document.getElementsByClassName returns an *array* of elements
-
-**Recapping:**
-- Use of switch statements
-- Using for loop to add similar eventlistener to buttons
-
-
