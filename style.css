@@ -89,7 +89,7 @@ header {
 }
 
 .number-button,
-.decimal-button,
+#decimal-button,
 #equal-button {
   padding: 11px;
   background-color: rgb(124, 125, 125);
@@ -99,13 +99,13 @@ header {
 }
 
 .number-button:hover,
-.decimal-button:hover,
+#decimal-button:hover,
 #equal-button:hover {
   background-color: rgb(150, 151, 151);
 }
 
 .number-button:active,
-.decimal-button:active,
+#decimal-button:active,
 #equal-button:active {
   background-color: rgb(176, 178, 178);
 }
