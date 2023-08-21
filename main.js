@@ -1,17 +1,16 @@
-let firstOperand = Number
-let secondOperand = Number
+let firstOperand = '0'
+let secondOperand = '0'
 let operator = ''
 let displayCurrent = document.getElementById('display-current')
 let clearButton = document.getElementById('clear-button')
 let deleteButton = document.getElementById('delete-button')
 let numberButtons = document.getElementsByClassName('number-button')
 
-let displayValue = '0'
 displayCurrent.innerHTML = '0'
 
 clearButton.addEventListener("click", function () {
   clear()
-  console.log(displayValue)
+  console.log(firstOperand)
   console.log(displayCurrent.innerHTML)
 });
 
@@ -24,37 +23,37 @@ for (let numberButton of numberButtons) {
     "click",
     () => {
       updateValue(numberButton.innerHTML)
-      console.log(displayValue)
+      console.log(firstOperand)
       console.log(displayCurrent.innerHTML)
     }
   )
 }
 
 function updateValue(value) {
-  if (displayValue === '0') {
-    displayValue = value
+  if (firstOperand === '0') {
+    firstOperand = value
     displayCurrent.innerHTML = value
-  } else if (displayValue.length <= 11) {
-    displayValue += value
+  } else if (firstOperand.length <= 11) {
+    firstOperand += value
     displayCurrent.innerHTML += value
   }
 }
 
 function clear() {
-  displayValue = '0'
+  firstOperand = '0'
   displayCurrent.innerHTML = '0'
 }
 
 function deleteLastNumber() {
   if (displayCurrent.innerHTML.length <= 1) {
     clear()
-    console.log(displayValue);
+    console.log(firstOperand);
     console.log(displayCurrent.innerHTML);
   } else {
-    newString = displayValue.slice(0, -1);
-    displayValue = newString
+    newString = firstOperand.slice(0, -1);
+    firstOperand = newString
     displayCurrent.innerHTML = newString
-    console.log(displayValue);
+    console.log(firstOperand);
     console.log(displayCurrent.innerHTML);
   }
 }
