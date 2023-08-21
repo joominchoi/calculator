@@ -45,6 +45,7 @@ for (let operatorButton of operatorButtons) {
     "click",
     () => {
       if (operator != '') {
+        operate(firstOperand, secondOperand, operator)
         operator = operatorButton.innerHTML
         firstOperand = answer
         secondOperand = '0'
