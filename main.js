@@ -1,5 +1,6 @@
 let firstOperand = '0'
 let secondOperand = '0'
+let answer = ''
 let operator = ''
 let displayCurrent = document.getElementById('display-current')
 let clearButton = document.getElementById('clear-button')
@@ -92,25 +93,33 @@ function deleteLastNumber() {
 function divide(firstOperand, secondOperand) {
   firstOperand = Number(firstOperand)
   secondOperand = Number(secondOperand)
-  console.log(firstOperand / secondOperand)
+  answer = (firstOperand / secondOperand).toString()
+  console.log(typeof answer)
+  console.log(answer)
 }
 
 function multiply(firstOperand, secondOperand) {
   firstOperand = Number(firstOperand)
   secondOperand = Number(secondOperand)
-  console.log(firstOperand * secondOperand)
+  answer = (firstOperand * secondOperand).toString()
+  console.log(typeof answer)
+  console.log(answer)
 }
 
 function add(firstOperand, secondOperand) {
   firstOperand = Number(firstOperand)
   secondOperand = Number(secondOperand)
-  console.log(firstOperand + secondOperand)
+  answer = (firstOperand + secondOperand).toString()
+  console.log(typeof answer)
+  console.log(answer)
 }
 
 function subtract(firstOperand, secondOperand) {
   firstOperand = Number(firstOperand)
   secondOperand = Number(secondOperand)
-  console.log(firstOperand - secondOperand)
+  answer = (firstOperand - secondOperand).toString()
+  console.log(typeof answer)
+  console.log(answer)
 }
 
 function operate(x, y, operator) {
