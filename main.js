@@ -2,6 +2,7 @@ let firstOperand = '0'
 let secondOperand = '0'
 let answer = ''
 let operator = ''
+let displayLast = document.getElementById('display-last')
 let displayCurrent = document.getElementById('display-current')
 let clearButton = document.getElementById('clear-button')
 let deleteButton = document.getElementById('delete-button')
@@ -67,7 +68,6 @@ for (let operatorButton of operatorButtons) {
 
 equalButton.addEventListener("click", function () {
   operate(firstOperand, secondOperand, operator)
-
 });
 
 function updateValue(value) {
@@ -104,8 +104,28 @@ function clear() {
 }
 
 function deleteLastNumber() {
-  if (displayCurrent.innerHTML.length <= 1) {
+  if (answer.length <= 1) {
     clear()
+  }
+  else if (answer != '') {
+    newString = answer.slice(0, -1);
+    firstOperand = '0'
+    secondOperand = '0'
+    operator = 'newAnswer'
+    answer = newString
+    displayCurrent.innerHTML = newString
+  }
+  else if (displayCurrent.innerHTML.length <= 1) {
+    if ((firstOperand === '0') && (secondOperand === '0')) {
+      clear()
+    } else {
+      secondOperand = '0'
+      displayCurrent.innerHTML = secondOperand
+    }
+  } else if ((firstOperand != '0') && (secondOperand != '0')) {
+    newString = secondOperand.slice(0, -1);
+    secondOperand = newString
+    displayCurrent.innerHTML = newString
   } else {
     newString = firstOperand.slice(0, -1);
     firstOperand = newString
@@ -117,7 +137,6 @@ function divide(firstOperand, secondOperand) {
   firstOperand = Number(firstOperand)
   secondOperand = Number(secondOperand)
   answer = (firstOperand / secondOperand).toString()
-  deleteButton.disabled = true
   console.log(`firstOperand = ${firstOperand}`)
   console.log(`secondOperand = ${secondOperand}`)
   console.log(`operator = ${operator}`)
@@ -128,7 +147,6 @@ function multiply(firstOperand, secondOperand) {
   firstOperand = Number(firstOperand)
   secondOperand = Number(secondOperand)
   answer = (firstOperand * secondOperand).toString()
-  deleteButton.disabled = true
   console.log(`firstOperand = ${firstOperand}`)
   console.log(`secondOperand = ${secondOperand}`)
   console.log(`operator = ${operator}`)
@@ -139,7 +157,6 @@ function add(firstOperand, secondOperand) {
   firstOperand = Number(firstOperand)
   secondOperand = Number(secondOperand)
   answer = (firstOperand + secondOperand).toString()
-  deleteButton.disabled = true
   console.log(`firstOperand = ${firstOperand}`)
   console.log(`secondOperand = ${secondOperand}`)
   console.log(`operator = ${operator}`)
@@ -150,7 +167,6 @@ function subtract(firstOperand, secondOperand) {
   firstOperand = Number(firstOperand)
   secondOperand = Number(secondOperand)
   answer = (firstOperand - secondOperand).toString()
-  deleteButton.disabled = true
   console.log(`firstOperand = ${firstOperand}`)
   console.log(`secondOperand = ${secondOperand}`)
   console.log(`operator = ${operator}`)
