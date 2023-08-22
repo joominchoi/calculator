@@ -108,23 +108,15 @@ function clear() {
 }
 
 function deleteLastDigit() {
-  if (answer.length <= 1) {
-    clear()
-  }
-  else if (answer != '') {
-    newString = answer.slice(0, -1);
-    firstOperand = ''
-    secondOperand = ''
-    operator = 'newAnswer'
-    answer = newString
-    displayCurrent.innerHTML = newString
-  }
-  else if (displayCurrent.innerHTML.length <= 1) {
+  if (displayCurrent.innerHTML.length <= 1) {
     if ((firstOperand === '') && (secondOperand === '')) {
       clear()
-    } else {
+    } else if ((firstOperand != '') && (secondOperand != '')) {
       secondOperand = ''
-      displayCurrent.innerHTML = secondOperand
+      displayCurrent.innerHTML = '0'
+    } else {
+      firstOperand = ''
+      displayCurrent.innerHTML = '0'
     }
   } else if ((firstOperand != '') && (secondOperand != '')) {
     newString = secondOperand.slice(0, -1);
