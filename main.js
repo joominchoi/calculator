@@ -1,5 +1,5 @@
-let firstOperand = '0'
-let secondOperand = '0'
+let firstOperand = ''
+let secondOperand = ''
 let answer = ''
 let operator = ''
 let displayLast = document.getElementById('display-last')
@@ -49,7 +49,7 @@ for (let operatorButton of operatorButtons) {
         operate(firstOperand, secondOperand, operator)
         operator = operatorButton.innerHTML
         firstOperand = answer
-        secondOperand = '0'
+        secondOperand = ''
         console.log(`firstOperand = ${firstOperand}`)
         console.log(`secondOperand = ${secondOperand}`)
         console.log(`operator = ${operator}`)
@@ -71,7 +71,7 @@ equalButton.addEventListener("click", function () {
 });
 
 function updateValue(value) {
-  if ((answer != '') && (secondOperand === '0')) {
+  if ((answer != '') && (secondOperand === '')) {
     firstOperand = answer
     secondOperand = value
     displayCurrent.innerHTML = value
@@ -79,13 +79,13 @@ function updateValue(value) {
     secondOperand += value
     displayCurrent.innerHTML += value
   }
-  else if ((operator === '') && (firstOperand === '0')) {
+  else if ((operator === '') && (firstOperand === '')) {
     firstOperand = value
     displayCurrent.innerHTML = value
   } else if (operator === '') {
     firstOperand += value
     displayCurrent.innerHTML += value
-  } else if ((operator != '') && (secondOperand === '0')) {
+  } else if ((operator != '') && (secondOperand === '')) {
     secondOperand = value
     displayCurrent.innerHTML = value
   } else if (operator != '') {
@@ -95,8 +95,8 @@ function updateValue(value) {
 }
 
 function clear() {
-  firstOperand = '0'
-  secondOperand = '0'
+  firstOperand = ''
+  secondOperand = ''
   operator = ''
   answer = ''
   deleteButton.disabled = false
@@ -109,20 +109,20 @@ function deleteLastDigit() {
   }
   else if (answer != '') {
     newString = answer.slice(0, -1);
-    firstOperand = '0'
-    secondOperand = '0'
+    firstOperand = ''
+    secondOperand = ''
     operator = 'newAnswer'
     answer = newString
     displayCurrent.innerHTML = newString
   }
   else if (displayCurrent.innerHTML.length <= 1) {
-    if ((firstOperand === '0') && (secondOperand === '0')) {
+    if ((firstOperand === '') && (secondOperand === '')) {
       clear()
     } else {
-      secondOperand = '0'
+      secondOperand = ''
       displayCurrent.innerHTML = secondOperand
     }
-  } else if ((firstOperand != '0') && (secondOperand != '0')) {
+  } else if ((firstOperand != '') && (secondOperand != '')) {
     newString = secondOperand.slice(0, -1);
     secondOperand = newString
     displayCurrent.innerHTML = newString
