@@ -21,7 +21,7 @@ clearButton.addEventListener("click", function () {
 });
 
 deleteButton.addEventListener("click", function () {
-  deleteLastNumber()
+  deleteLastDigit()
   console.log(`firstOperand = ${firstOperand}`)
   console.log(`secondOperand = ${secondOperand}`)
   console.log(`operator = ${operator}`)
@@ -103,7 +103,7 @@ function clear() {
   displayCurrent.innerHTML = '0'
 }
 
-function deleteLastNumber() {
+function deleteLastDigit() {
   if (answer.length <= 1) {
     clear()
   }
