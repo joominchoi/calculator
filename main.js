@@ -50,6 +50,7 @@ for (let operatorButton of operatorButtons) {
         operator = operatorButton.innerHTML
         firstOperand = answer
         secondOperand = ''
+        answer = ''
         console.log(`firstOperand = ${firstOperand}`)
         console.log(`secondOperand = ${secondOperand}`)
         console.log(`operator = ${operator}`)
