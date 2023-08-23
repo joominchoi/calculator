@@ -33,6 +33,7 @@ for (let numberButton of numberButtons) {
     "click",
     () => {
       enableDeleteButton()
+      enableOperatorButtons()
       updateValue(numberButton.innerHTML)
       console.log(`firstOperand = ${firstOperand}`)
       console.log(`secondOperand = ${secondOperand}`)
@@ -55,6 +56,7 @@ for (let operatorButton of operatorButtons) {
         firstOperand = answer
         secondOperand = ''
         answer = ''
+        disableOperatorButtons()
         console.log(`firstOperand = ${firstOperand}`)
         console.log(`secondOperand = ${secondOperand}`)
         console.log(`operator = ${operator}`)
@@ -62,6 +64,7 @@ for (let operatorButton of operatorButtons) {
       }
       else if (operator === '') {
         operator = operatorButton.innerHTML
+        disableOperatorButtons()
         console.log(`firstOperand = ${firstOperand}`)
         console.log(`secondOperand = ${secondOperand}`)
         console.log(`operator = ${operator}`)
@@ -134,7 +137,7 @@ function deleteLastCharacter() {
   } else {
     newString = firstOperand.slice(0, -1);
     firstOperand = newString
-    
+
     if (newString === '') {
       displayCurrent.innerHTML = '0'
       disableDeleteButton()
@@ -209,15 +212,26 @@ function operate(x, y, operator) {
   }
 }
 
+function disableDeleteButton() {
+  deleteButton.disabled = true
+}
 function enableDeleteButton() {
   deleteButton.disabled = false
 }
 
-function disableDeleteButton() {
-  deleteButton.disabled = true
+function disableOperatorButtons() {
+  for (let operatorButton of operatorButtons) {
+    operatorButton.disabled = true
+  }
+}
+
+function enableOperatorButtons() {
+  for (let operatorButton of operatorButtons) {
+    operatorButton.disabled = false
+  }
 }
 
 window.onload = () => {
-	disableDeleteButton()
+  disableDeleteButton()
+  disableOperatorButtons()
 }
-

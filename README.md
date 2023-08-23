@@ -15,6 +15,7 @@ Building an on-screen calculator using JavaScript, HTML, and CSS
 - How to remove last character from string
 - Classes can be assigned to multiple elements, ID is specific to a single element
 - document.getElementsByClassName returns an *array* of elements
+- Remember to iterate through array to apply an attribute to all or specific elements
 
 **Recapping:**
 - Use of switch statements
