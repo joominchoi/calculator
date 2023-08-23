@@ -75,6 +75,7 @@ for (let operatorButton of operatorButtons) {
 
 equalButton.addEventListener("click", function () {
   operate(firstOperand, secondOperand, operator)
+  disableEqualButton()
 });
 
 function updateValue(value) {
@@ -245,5 +246,5 @@ function enableEqualButton() {
 window.onload = () => {
   disableDeleteButton()
   disableOperatorButtons()
-  // disableEqualButton()
+  disableEqualButton()
 }
