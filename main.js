@@ -32,6 +32,7 @@ for (let numberButton of numberButtons) {
   numberButton.addEventListener(
     "click",
     () => {
+      enableDeleteButton()
       updateValue(numberButton.innerHTML)
       console.log(`firstOperand = ${firstOperand}`)
       console.log(`secondOperand = ${secondOperand}`)
@@ -108,8 +109,8 @@ function clear() {
   secondOperand = ''
   operator = ''
   answer = ''
-  deleteButton.disabled = false
   displayCurrent.innerHTML = '0'
+  disableDeleteButton()
   console.log(`firstOperand = ${firstOperand}`)
   console.log(`secondOperand = ${secondOperand}`)
   console.log(`operator = ${operator}`)
@@ -133,7 +134,13 @@ function deleteLastCharacter() {
   } else {
     newString = firstOperand.slice(0, -1);
     firstOperand = newString
-    displayCurrent.innerHTML = newString
+    
+    if (newString === '') {
+      displayCurrent.innerHTML = '0'
+      disableDeleteButton()
+    } else {
+      displayCurrent.innerHTML = newString
+    }
   }
 }
 
@@ -201,3 +208,16 @@ function operate(x, y, operator) {
       return null
   }
 }
+
+function enableDeleteButton() {
+  deleteButton.disabled = false
+}
+
+function disableDeleteButton() {
+  deleteButton.disabled = true
+}
+
+window.onload = () => {
+	disableDeleteButton()
+}
+
