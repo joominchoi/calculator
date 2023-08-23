@@ -47,10 +47,7 @@ for (let operatorButton of operatorButtons) {
   operatorButton.addEventListener(
     "click",
     () => {
-      if ((firstOperand === '') && (secondOperand === '')) {
-        alert('Please input a number first')
-      }
-      else if (operator != '') {
+      if (operator != '') {
         operate(firstOperand, secondOperand, operator)
         operator = operatorButton.innerHTML
         firstOperand = answer
