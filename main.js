@@ -110,6 +110,10 @@ function clear() {
   answer = ''
   deleteButton.disabled = false
   displayCurrent.innerHTML = '0'
+  console.log(`firstOperand = ${firstOperand}`)
+  console.log(`secondOperand = ${secondOperand}`)
+  console.log(`operator = ${operator}`)
+  console.log(`answer = ${answer}`)
 }
 
 function deleteLastDigit() {
@@ -137,11 +141,13 @@ function deleteLastDigit() {
 function divide(firstOperand, secondOperand) {
   firstOperand = Number(firstOperand)
   secondOperand = Number(secondOperand)
-  answer = (firstOperand / secondOperand).toString()
-  console.log(`firstOperand = ${firstOperand}`)
-  console.log(`secondOperand = ${secondOperand}`)
-  console.log(`operator = ${operator}`)
-  console.log(`answer = ${answer}`)
+
+  if (secondOperand === 0) {
+    alert("Are you trying to crash the calculator? 🙃")
+    answer = ''
+  } else {
+    answer = (firstOperand / secondOperand).toString()
+  }
 }
 
 function multiply(firstOperand, secondOperand) {
@@ -178,7 +184,11 @@ function operate(x, y, operator) {
   switch (operator) {
     case '÷':
       divide(x, y)
-      return displayCurrent.innerHTML = answer
+      if (answer === '') {
+        return clear()
+      } else {
+        return displayCurrent.innerHTML = answer
+      }
     case 'x':
       multiply(x, y)
       return displayCurrent.innerHTML = answer
