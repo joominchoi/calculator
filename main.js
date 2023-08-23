@@ -21,7 +21,7 @@ clearButton.addEventListener("click", function () {
 });
 
 deleteButton.addEventListener("click", function () {
-  deleteLastDigit()
+  deleteLastCharacter()
   console.log(`firstOperand = ${firstOperand}`)
   console.log(`secondOperand = ${secondOperand}`)
   console.log(`operator = ${operator}`)
@@ -116,21 +116,20 @@ function clear() {
   console.log(`answer = ${answer}`)
 }
 
-function deleteLastDigit() {
-  if (displayCurrent.innerHTML.length <= 1) {
-    if ((firstOperand === '') && (secondOperand === '')) {
-      clear()
-    } else if ((firstOperand != '') && (secondOperand != '')) {
-      secondOperand = ''
-      displayCurrent.innerHTML = '0'
-    } else {
-      firstOperand = ''
-      displayCurrent.innerHTML = '0'
-    }
+function deleteLastCharacter() {
+  if ((firstOperand != '') && (operator != '') && (secondOperand === '')) {
+    operator = ''
+    displayCurrent.innerHTML = firstOperand
   } else if ((firstOperand != '') && (secondOperand != '')) {
     newString = secondOperand.slice(0, -1);
     secondOperand = newString
-    displayCurrent.innerHTML = newString
+    answer = ''
+
+    if (newString === '') {
+      displayCurrent.innerHTML = '0'
+    } else {
+      displayCurrent.innerHTML = newString
+    }
   } else {
     newString = firstOperand.slice(0, -1);
     firstOperand = newString
