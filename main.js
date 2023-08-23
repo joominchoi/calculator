@@ -54,6 +54,7 @@ for (let operatorButton of operatorButtons) {
         secondOperand = ''
         answer = ''
         disableOperatorButtons()
+        disableEqualButton()
         console.log(`firstOperand = ${firstOperand}`)
         console.log(`secondOperand = ${secondOperand}`)
         console.log(`operator = ${operator}`)
@@ -62,6 +63,7 @@ for (let operatorButton of operatorButtons) {
       else if (operator === '') {
         operator = operatorButton.innerHTML
         disableOperatorButtons()
+        disableEqualButton()
         console.log(`firstOperand = ${firstOperand}`)
         console.log(`secondOperand = ${secondOperand}`)
         console.log(`operator = ${operator}`)
@@ -97,9 +99,11 @@ function updateValue(value) {
     displayCurrent.innerHTML += value
   } else if ((operator != '') && (secondOperand === '')) {
     secondOperand = value
+    enableEqualButton()
     displayCurrent.innerHTML = value
   } else if (operator != '') {
     secondOperand += value
+    enableEqualButton()
     displayCurrent.innerHTML += value
   }
 }
@@ -228,7 +232,16 @@ function enableOperatorButtons() {
   }
 }
 
+function disableEqualButton() {
+  equalButton.disabled = true
+}
+
+function enableEqualButton() {
+  equalButton.disabled = false
+}
+
 window.onload = () => {
   disableDeleteButton()
   disableOperatorButtons()
+  // disableEqualButton()
 }
