@@ -125,6 +125,7 @@ function deleteLastCharacter() {
   if ((firstOperand != '') && (operator != '') && (secondOperand === '')) {
     operator = ''
     displayCurrent.innerHTML = firstOperand
+    enableOperatorButtons()
   } else if ((firstOperand != '') && (secondOperand != '')) {
     newString = secondOperand.slice(0, -1);
     secondOperand = newString
@@ -132,6 +133,7 @@ function deleteLastCharacter() {
 
     if (newString === '') {
       displayCurrent.innerHTML = '0'
+      disableOperatorButtons()
     } else {
       displayCurrent.innerHTML = newString
     }
