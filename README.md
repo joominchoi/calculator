@@ -22,7 +22,7 @@ Building an on-screen calculator using JavaScript, HTML, and CSS
 - Using console.log() to check values of variables at different points when code is executed
 
 **WIP:**
-- Step 6
+- Refactoring messy code
 
 **Steps:**
 1. Your calculator is going to contain functions for all of the basic math operators you typically find on simple calculators, so start by creating functions for the following items and testing them in your browser’s console.

@@ -45,7 +45,7 @@ for (let operatorButton of operatorButtons) {
   operatorButton.addEventListener(
     "click",
     () => {
-      if ((firstOperand === '') && (secondOperand === '' )) {
+      if ((firstOperand === '') && (secondOperand === '')) {
         alert('Please input a number first')
       }
       else if (operator != '') {
@@ -75,7 +75,12 @@ equalButton.addEventListener("click", function () {
 });
 
 function updateValue(value) {
-  if ((answer != '') && (secondOperand === '')) {
+  if ((answer != '') && (firstOperand != '') && (secondOperand != '') && (operator != '')) {
+    clear()
+    firstOperand = value
+    displayCurrent.innerHTML = value
+  }
+  else if ((answer != '') && (secondOperand === '')) {
     firstOperand = answer
     secondOperand = value
     displayCurrent.innerHTML = value
