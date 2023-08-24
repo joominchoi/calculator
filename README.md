@@ -5,32 +5,32 @@ Building an on-screen calculator using JavaScript, HTML, and CSS
 **Course reference pages:** \
 [Project: Calculator](https://www.theodinproject.com/lessons/foundations-calculator)
 
-**Thoughts:**
+## Thoughts
 - As always, do not try to write 'perfect' code. Get the program working first and then thinking about refactoring and optimising!
 - Sometimes (or many times) I will spend hours trying out different solutions for a specific problem, adding and deleting code, only for the solution to be one line of code; but remember, I would not have come to this solution without the hours of struggle and once I reach the solution, I will understand it better.
 - I made extensive use of console.log() to check that the values of variables are what I expected at certain points when the code is executed: I can't even begin to imagine how frustrating this project would have been if I had not made use of console.log() as liberally as I did.
 - The Code is very messy but I am glad I was able to get all the functionalities working as intended.
 - By continuously testing manually, I was able to identify edge case scenarios that would make the finished product appear incomplete and unprofessional: consecutive operators, multiple decimal points, pressing equals button when nothing present or following an operator etc
 
-**Learnings:**
+## Learnings
 - Using *grid-column: span 2* to make element take up 2 column spaces
 - How to remove last character from string
 - Classes can be assigned to multiple elements, ID is specific to a single element
 - document.getElementsByClassName returns an *array* of elements
 - Remember to iterate through array to apply an attribute to all or specific elements
 
-**Recapping:**
+## Recapping
 - Use of switch statements
 - Using for loop to add similar eventlistener to buttons
 - Using console.log() to check values of variables at different points when code is executed
 - Multiple values cannot be returned from a function in JavaScript: when using switch case
 
-**WIP:**
+## WIP
 - Refactoring messy code
 - Rounding answers with long decimals
 - Adding keyboard support
 
-**Steps:**
+## Steps
 1. Your calculator is going to contain functions for all of the basic math operators you typically find on simple calculators, so start by creating functions for the following items and testing them in your browser’s console.
 - add
 - subtract
