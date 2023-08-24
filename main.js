@@ -237,7 +237,7 @@ function divide(firstOperand, secondOperand) {
     console.log(`operator = ${operator}`)
     console.log(`answer = ${answer}`)
   } else {
-    answer = (firstOperand / secondOperand)
+    answer = roundResult((firstOperand / secondOperand))
     console.log(`firstOperand = ${firstOperand}`)
     console.log(`secondOperand = ${secondOperand}`)
     console.log(`operator = ${operator}`)
@@ -246,7 +246,7 @@ function divide(firstOperand, secondOperand) {
 }
 
 function multiply(firstOperand, secondOperand) {
-  answer = (firstOperand * secondOperand)
+  answer = roundResult((firstOperand * secondOperand))
   console.log(`firstOperand = ${firstOperand}`)
   console.log(`secondOperand = ${secondOperand}`)
   console.log(`operator = ${operator}`)
@@ -254,7 +254,7 @@ function multiply(firstOperand, secondOperand) {
 }
 
 function add(firstOperand, secondOperand) {
-  answer = (firstOperand + secondOperand)
+  answer = roundResult((firstOperand + secondOperand))
   console.log(`firstOperand = ${firstOperand}`)
   console.log(`secondOperand = ${secondOperand}`)
   console.log(`operator = ${operator}`)
@@ -262,7 +262,7 @@ function add(firstOperand, secondOperand) {
 }
 
 function subtract(firstOperand, secondOperand) {
-  answer = (firstOperand - secondOperand)
+  answer = roundResult((firstOperand - secondOperand))
   console.log(`firstOperand = ${firstOperand}`)
   console.log(`secondOperand = ${secondOperand}`)
   console.log(`operator = ${operator}`)
@@ -297,6 +297,10 @@ function operate(firstOperand, secondOperand, operator) {
 function convertStringToNumber(firstOperand, secondOperand) {
   x = Number(firstOperand)
   y = Number(secondOperand)
+}
+
+function roundResult(result) {
+  return Math.round(result * 1000) / 1000
 }
 
 function disableDeleteButton() {
