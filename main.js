@@ -78,7 +78,6 @@ for (let operatorButton of operatorButtons) {
 
 decimalButton.addEventListener("click", function() {
   updateValue(decimalButton.innerHTML)
-  enableOperatorButtons()
 })
 
 equalButton.addEventListener("click", function () {
@@ -96,6 +95,7 @@ function updateValue(value) {
     if (value === '.') {
       disableEqualButton()
       disableDecimalButton()
+      disableOperatorButtons()
       firstOperand = '0.'
       displayCurrent.innerHTML = firstOperand
     } else {
@@ -108,6 +108,7 @@ function updateValue(value) {
     if (value === '.') {
       disableEqualButton()
       disableDecimalButton()
+      disableOperatorButtons()
       secondOperand = '0.'
       displayCurrent.innerHTML = secondOperand
     } else {
@@ -123,6 +124,7 @@ function updateValue(value) {
     if (value === '.') {
       disableEqualButton()
       disableDecimalButton()
+      disableOperatorButtons()
       firstOperand = '0.'
       displayCurrent.innerHTML = firstOperand
     } else {
@@ -134,6 +136,7 @@ function updateValue(value) {
     if (value === '.') {
       disableEqualButton()
       disableDecimalButton()
+      disableOperatorButtons()
     }
     firstOperand += value
     displayCurrent.innerHTML += value
@@ -142,6 +145,7 @@ function updateValue(value) {
     if (value === '.') {
       disableEqualButton()
       disableDecimalButton()
+      disableOperatorButtons()
       secondOperand = '0.'
       displayCurrent.innerHTML = secondOperand
     } else {
@@ -155,6 +159,7 @@ function updateValue(value) {
     if (value === '.') {
       disableEqualButton()
       disableDecimalButton()
+      disableOperatorButtons()
       secondOperand += value
     } else {
       secondOperand += value
