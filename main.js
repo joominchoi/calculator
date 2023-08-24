@@ -145,6 +145,7 @@ function deleteLastCharacter() {
     if (newString === '') {
       displayCurrent.innerHTML = '0'
       disableDeleteButton()
+      disableOperatorButtons()
     } else {
       displayCurrent.innerHTML = newString
     }
