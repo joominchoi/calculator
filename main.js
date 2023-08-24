@@ -94,6 +94,7 @@ function updateValue(value) {
   if ((answer != '') && (firstOperand != '') && (secondOperand != '') && (operator != '')) {
     clear()
     if (value === '.') {
+      disableEqualButton()
       disableDecimalButton()
       firstOperand = '0.'
       displayCurrent.innerHTML = firstOperand
@@ -105,6 +106,7 @@ function updateValue(value) {
   } else if ((answer != '') && (secondOperand === '')) {
     firstOperand = answer
     if (value === '.') {
+      disableEqualButton()
       disableDecimalButton()
       secondOperand = '0.'
       displayCurrent.innerHTML = secondOperand
@@ -119,6 +121,7 @@ function updateValue(value) {
     updateDisplayCalculation()
   } else if ((operator === '') && (firstOperand === '')) {
     if (value === '.') {
+      disableEqualButton()
       disableDecimalButton()
       firstOperand = '0.'
       displayCurrent.innerHTML = firstOperand
@@ -129,6 +132,7 @@ function updateValue(value) {
     updateDisplayCalculation()
   } else if (operator === '') {
     if (value === '.') {
+      disableEqualButton()
       disableDecimalButton()
     }
     firstOperand += value
@@ -136,21 +140,27 @@ function updateValue(value) {
     updateDisplayCalculation()
   } else if ((operator != '') && (secondOperand === '')) {
     if (value === '.') {
+      disableEqualButton()
       disableDecimalButton()
       secondOperand = '0.'
       displayCurrent.innerHTML = secondOperand
     } else {
       secondOperand = value
       displayCurrent.innerHTML = secondOperand
+      enableEqualButton()
     }
-    enableEqualButton()
+    
     updateDisplayCalculation()
   } else if (operator != '') {
     if (value === '.') {
+      disableEqualButton()
       disableDecimalButton()
-    }
-    secondOperand += value
+      secondOperand += value
+    } else {
+      secondOperand += value
     enableEqualButton()
+    }
+
     displayCurrent.innerHTML += value
     updateDisplayCalculation()
   }
