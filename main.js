@@ -9,6 +9,7 @@ let deleteButton = document.getElementById('delete-button')
 let numberButtons = document.getElementsByClassName('number-button')
 let operatorButtons = document.getElementsByClassName('operator-button')
 let equalButton = document.getElementById('equal-button')
+let decimalButton = document.getElementById('decimal-button')
 
 clearButton.addEventListener("click", function () {
   clear()
@@ -73,6 +74,10 @@ for (let operatorButton of operatorButtons) {
   )
 }
 
+decimalButton.addEventListener("click"), function() {
+  updateValue(decimalButton.innerHTML)
+}
+
 equalButton.addEventListener("click", function () {
   operate(firstOperand, secondOperand, operator)
   disableEqualButton()
@@ -88,8 +93,7 @@ function updateValue(value) {
     firstOperand = value
     displayCurrent.innerHTML = value
     updateDisplayCalculation()
-  }
-  else if ((answer != '') && (secondOperand === '')) {
+  } else if ((answer != '') && (secondOperand === '')) {
     firstOperand = answer
     secondOperand = value
     displayCurrent.innerHTML = value
@@ -98,8 +102,7 @@ function updateValue(value) {
     secondOperand += value
     displayCurrent.innerHTML += value
     updateDisplayCalculation()
-  }
-  else if ((operator === '') && (firstOperand === '')) {
+  } else if ((operator === '') && (firstOperand === '')) {
     firstOperand = value
     displayCurrent.innerHTML = value
     updateDisplayCalculation()
@@ -267,6 +270,14 @@ function disableEqualButton() {
 
 function enableEqualButton() {
   equalButton.disabled = false
+}
+
+function disableDecimalButton() {
+  decimalButton.disabled = true
+}
+
+function enableDecimalButton() {
+  decimalButton.disabled = false
 }
 
 window.onload = () => {
