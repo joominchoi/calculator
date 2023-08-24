@@ -55,6 +55,7 @@ for (let operatorButton of operatorButtons) {
         updateDisplayCalculation()
         disableOperatorButtons()
         disableEqualButton()
+        enableDecimalButton()
         console.log(`firstOperand = ${firstOperand}`)
         console.log(`secondOperand = ${secondOperand}`)
         console.log(`operator = ${operator}`)
@@ -65,6 +66,7 @@ for (let operatorButton of operatorButtons) {
         updateDisplayCalculation()
         disableOperatorButtons()
         disableEqualButton()
+        enableDecimalButton()
         console.log(`firstOperand = ${firstOperand}`)
         console.log(`secondOperand = ${secondOperand}`)
         console.log(`operator = ${operator}`)
@@ -74,9 +76,10 @@ for (let operatorButton of operatorButtons) {
   )
 }
 
-decimalButton.addEventListener("click"), function() {
+decimalButton.addEventListener("click", function() {
   updateValue(decimalButton.innerHTML)
-}
+  enableOperatorButtons()
+})
 
 equalButton.addEventListener("click", function () {
   operate(firstOperand, secondOperand, operator)
@@ -90,32 +93,62 @@ function updateDisplayCalculation() {
 function updateValue(value) {
   if ((answer != '') && (firstOperand != '') && (secondOperand != '') && (operator != '')) {
     clear()
-    firstOperand = value
-    displayCurrent.innerHTML = value
+    if (value === '.') {
+      disableDecimalButton()
+      firstOperand = '0.'
+      displayCurrent.innerHTML = firstOperand
+    } else {
+      firstOperand = value
+      displayCurrent.innerHTML = firstOperand
+    }
     updateDisplayCalculation()
   } else if ((answer != '') && (secondOperand === '')) {
     firstOperand = answer
-    secondOperand = value
-    displayCurrent.innerHTML = value
+    if (value === '.') {
+      disableDecimalButton()
+      secondOperand = '0.'
+      displayCurrent.innerHTML = secondOperand
+    } else {
+      secondOperand = value
+      displayCurrent.innerHTML = secondOperand
+    }
     updateDisplayCalculation()
   } else if (answer != '') {
     secondOperand += value
     displayCurrent.innerHTML += value
     updateDisplayCalculation()
   } else if ((operator === '') && (firstOperand === '')) {
-    firstOperand = value
-    displayCurrent.innerHTML = value
+    if (value === '.') {
+      disableDecimalButton()
+      firstOperand = '0.'
+      displayCurrent.innerHTML = firstOperand
+    } else {
+      firstOperand = value
+      displayCurrent.innerHTML = firstOperand
+    }
     updateDisplayCalculation()
   } else if (operator === '') {
+    if (value === '.') {
+      disableDecimalButton()
+    }
     firstOperand += value
     displayCurrent.innerHTML += value
     updateDisplayCalculation()
   } else if ((operator != '') && (secondOperand === '')) {
-    secondOperand = value
+    if (value === '.') {
+      disableDecimalButton()
+      secondOperand = '0.'
+      displayCurrent.innerHTML = secondOperand
+    } else {
+      secondOperand = value
+      displayCurrent.innerHTML = secondOperand
+    }
     enableEqualButton()
-    displayCurrent.innerHTML = value
     updateDisplayCalculation()
   } else if (operator != '') {
+    if (value === '.') {
+      disableDecimalButton()
+    }
     secondOperand += value
     enableEqualButton()
     displayCurrent.innerHTML += value
@@ -141,10 +174,14 @@ function deleteLastCharacter() {
   if ((firstOperand != '') && (operator != '') && (secondOperand === '')) {
     operator = ''
     displayCurrent.innerHTML = firstOperand
+    disableDecimalButton()
     updateDisplayCalculation()
     enableOperatorButtons()
   } else if ((firstOperand != '') && (secondOperand != '')) {
     newString = secondOperand.slice(0, -1);
+    if (!newString.includes('.')) {
+      enableDecimalButton()
+    }
     secondOperand = newString
     answer = ''
 
@@ -158,6 +195,9 @@ function deleteLastCharacter() {
     }
   } else {
     newString = firstOperand.slice(0, -1);
+    if (!newString.includes('.')) {
+      enableDecimalButton()
+    }
     firstOperand = newString
 
     if (newString === '') {
