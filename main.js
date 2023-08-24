@@ -10,8 +10,6 @@ let numberButtons = document.getElementsByClassName('number-button')
 let operatorButtons = document.getElementsByClassName('operator-button')
 let equalButton = document.getElementById('equal-button')
 
-displayCurrent.innerHTML = '0'
-
 clearButton.addEventListener("click", function () {
   clear()
   console.log(`firstOperand = ${firstOperand}`)
@@ -53,6 +51,7 @@ for (let operatorButton of operatorButtons) {
         firstOperand = answer
         secondOperand = ''
         answer = ''
+        updateDisplayCalculation()
         disableOperatorButtons()
         disableEqualButton()
         console.log(`firstOperand = ${firstOperand}`)
@@ -62,6 +61,7 @@ for (let operatorButton of operatorButtons) {
       }
       else if (operator === '') {
         operator = operatorButton.innerHTML
+        updateDisplayCalculation()
         disableOperatorButtons()
         disableEqualButton()
         console.log(`firstOperand = ${firstOperand}`)
@@ -78,34 +78,45 @@ equalButton.addEventListener("click", function () {
   disableEqualButton()
 });
 
+function updateDisplayCalculation() {
+  displayCalculation.innerHTML = `${firstOperand} ${operator} ${secondOperand}`
+}
+
 function updateValue(value) {
   if ((answer != '') && (firstOperand != '') && (secondOperand != '') && (operator != '')) {
     clear()
     firstOperand = value
     displayCurrent.innerHTML = value
+    updateDisplayCalculation()
   }
   else if ((answer != '') && (secondOperand === '')) {
     firstOperand = answer
     secondOperand = value
     displayCurrent.innerHTML = value
+    updateDisplayCalculation()
   } else if (answer != '') {
     secondOperand += value
     displayCurrent.innerHTML += value
+    updateDisplayCalculation()
   }
   else if ((operator === '') && (firstOperand === '')) {
     firstOperand = value
     displayCurrent.innerHTML = value
+    updateDisplayCalculation()
   } else if (operator === '') {
     firstOperand += value
     displayCurrent.innerHTML += value
+    updateDisplayCalculation()
   } else if ((operator != '') && (secondOperand === '')) {
     secondOperand = value
     enableEqualButton()
     displayCurrent.innerHTML = value
+    updateDisplayCalculation()
   } else if (operator != '') {
     secondOperand += value
     enableEqualButton()
     displayCurrent.innerHTML += value
+    updateDisplayCalculation()
   }
 }
 
@@ -115,6 +126,7 @@ function clear() {
   operator = ''
   answer = ''
   displayCurrent.innerHTML = '0'
+  updateDisplayCalculation()
   disableDeleteButton()
   console.log(`firstOperand = ${firstOperand}`)
   console.log(`secondOperand = ${secondOperand}`)
@@ -126,6 +138,7 @@ function deleteLastCharacter() {
   if ((firstOperand != '') && (operator != '') && (secondOperand === '')) {
     operator = ''
     displayCurrent.innerHTML = firstOperand
+    updateDisplayCalculation()
     enableOperatorButtons()
   } else if ((firstOperand != '') && (secondOperand != '')) {
     newString = secondOperand.slice(0, -1);
@@ -134,9 +147,11 @@ function deleteLastCharacter() {
 
     if (newString === '') {
       displayCurrent.innerHTML = '0'
+      updateDisplayCalculation()
       disableOperatorButtons()
     } else {
       displayCurrent.innerHTML = newString
+      updateDisplayCalculation()
     }
   } else {
     newString = firstOperand.slice(0, -1);
@@ -144,10 +159,12 @@ function deleteLastCharacter() {
 
     if (newString === '') {
       displayCurrent.innerHTML = '0'
+      updateDisplayCalculation()
       disableDeleteButton()
       disableOperatorButtons()
     } else {
       displayCurrent.innerHTML = newString
+      updateDisplayCalculation()
     }
   }
 }
@@ -159,8 +176,16 @@ function divide(firstOperand, secondOperand) {
   if (secondOperand === 0) {
     alert("Are you trying to crash the calculator? 🙃")
     answer = ''
+    console.log(`firstOperand = ${firstOperand}`)
+    console.log(`secondOperand = ${secondOperand}`)
+    console.log(`operator = ${operator}`)
+    console.log(`answer = ${answer}`)
   } else {
     answer = (firstOperand / secondOperand).toString()
+    console.log(`firstOperand = ${firstOperand}`)
+    console.log(`secondOperand = ${secondOperand}`)
+    console.log(`operator = ${operator}`)
+    console.log(`answer = ${answer}`)
   }
 }
 
@@ -200,7 +225,7 @@ function operate(x, y, operator) {
       divide(x, y)
       if (answer === '') {
         return clear()
-      } else {
+      } else if (answer != '') {
         return displayCurrent.innerHTML = answer
       }
     case 'x':
@@ -248,4 +273,5 @@ window.onload = () => {
   disableDeleteButton()
   disableOperatorButtons()
   disableEqualButton()
+  displayCurrent.innerHTML = '0'
 }
