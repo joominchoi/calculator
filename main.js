@@ -13,18 +13,10 @@ let equalButton = document.getElementById('equal-button')
 
 clearButton.addEventListener("click", function () {
   clear()
-  console.log(`firstOperand = ${firstOperand}`)
-  console.log(`secondOperand = ${secondOperand}`)
-  console.log(`operator = ${operator}`)
-  console.log(`answer = ${answer}`)
 });
 
 deleteButton.addEventListener("click", function () {
   deleteLastCharacter()
-  console.log(`firstOperand = ${firstOperand}`)
-  console.log(`secondOperand = ${secondOperand}`)
-  console.log(`operator = ${operator}`)
-  console.log(`answer = ${answer}`)
 });
 
 for (let numberButton of numberButtons) {
@@ -34,10 +26,6 @@ for (let numberButton of numberButtons) {
       enableDeleteButton()
       enableOperatorButtons()
       updateValue(numberButton.innerHTML)
-      console.log(`firstOperand = ${firstOperand}`)
-      console.log(`secondOperand = ${secondOperand}`)
-      console.log(`operator = ${operator}`)
-      console.log(`answer = ${answer}`)
     }
   )
 }
@@ -56,10 +44,6 @@ for (let operatorButton of operatorButtons) {
         disableEqualButton()
         enableDecimalButton()
         updateDisplayCalculation()
-        console.log(`firstOperand = ${firstOperand}`)
-        console.log(`secondOperand = ${secondOperand}`)
-        console.log(`operator = ${operator}`)
-        console.log(`answer = ${answer}`)
       }
       else if (operator === '') {
         operator = operatorButton.innerHTML
@@ -67,10 +51,6 @@ for (let operatorButton of operatorButtons) {
         disableEqualButton()
         enableDecimalButton()
         updateDisplayCalculation()
-        console.log(`firstOperand = ${firstOperand}`)
-        console.log(`secondOperand = ${secondOperand}`)
-        console.log(`operator = ${operator}`)
-        console.log(`answer = ${answer}`)
       }
     }
   )
@@ -153,7 +133,6 @@ function updateValue(value) {
       displayCurrent.innerHTML = secondOperand
       enableEqualButton()
     }
-
     updateDisplayCalculation()
   } else if (operator != '') {
     if (value === '.') {
@@ -165,7 +144,6 @@ function updateValue(value) {
       secondOperand += value
       enableEqualButton()
     }
-
     displayCurrent.innerHTML += value
     updateDisplayCalculation()
   }
@@ -180,10 +158,6 @@ function clear() {
   disableDeleteButton()
   enableDecimalButton()
   updateDisplayCalculation()
-  console.log(`firstOperand = ${firstOperand}`)
-  console.log(`secondOperand = ${secondOperand}`)
-  console.log(`operator = ${operator}`)
-  console.log(`answer = ${answer}`)
 }
 
 function deleteLastCharacter() {
@@ -232,41 +206,21 @@ function divide(firstOperand, secondOperand) {
   if (secondOperand === 0) {
     alert("Are you trying to crash the calculator? 🙃")
     answer = ''
-    console.log(`firstOperand = ${firstOperand}`)
-    console.log(`secondOperand = ${secondOperand}`)
-    console.log(`operator = ${operator}`)
-    console.log(`answer = ${answer}`)
   } else {
     answer = roundResult((firstOperand / secondOperand))
-    console.log(`firstOperand = ${firstOperand}`)
-    console.log(`secondOperand = ${secondOperand}`)
-    console.log(`operator = ${operator}`)
-    console.log(`answer = ${answer}`)
   }
 }
 
 function multiply(firstOperand, secondOperand) {
   answer = roundResult((firstOperand * secondOperand))
-  console.log(`firstOperand = ${firstOperand}`)
-  console.log(`secondOperand = ${secondOperand}`)
-  console.log(`operator = ${operator}`)
-  console.log(`answer = ${answer}`)
 }
 
 function add(firstOperand, secondOperand) {
   answer = roundResult((firstOperand + secondOperand))
-  console.log(`firstOperand = ${firstOperand}`)
-  console.log(`secondOperand = ${secondOperand}`)
-  console.log(`operator = ${operator}`)
-  console.log(`answer = ${answer}`)
 }
 
 function subtract(firstOperand, secondOperand) {
   answer = roundResult((firstOperand - secondOperand))
-  console.log(`firstOperand = ${firstOperand}`)
-  console.log(`secondOperand = ${secondOperand}`)
-  console.log(`operator = ${operator}`)
-  console.log(`answer = ${answer}`)
 }
 
 function operate(firstOperand, secondOperand, operator) {

@@ -26,8 +26,6 @@ Building an on-screen calculator using JavaScript, HTML, and CSS
 - Multiple values cannot be returned from a function in JavaScript: when using switch case
 
 ## WIP
-- Refactoring messy code
-- Rounding answers with long decimals
 - Adding keyboard support
 
 ## Steps
