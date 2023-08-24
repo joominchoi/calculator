@@ -164,6 +164,7 @@ function clear() {
   displayCurrent.innerHTML = '0'
   updateDisplayCalculation()
   disableDeleteButton()
+  enableDecimalButton()
   console.log(`firstOperand = ${firstOperand}`)
   console.log(`secondOperand = ${secondOperand}`)
   console.log(`operator = ${operator}`)
