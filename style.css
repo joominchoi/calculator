@@ -38,7 +38,7 @@ header {
   color: white;
 }
 
-.display-last {
+#display-calculation   {
   min-height: 32px;
   font-size: 18px;
 }
