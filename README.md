@@ -26,7 +26,7 @@ Building an on-screen calculator using JavaScript, HTML, and CSS
 - Multiple values cannot be returned from a function in JavaScript: when using switch case
 
 ## WIP
-- Adding keyboard support
+- Disabling keyboard input like disabling buttons
 
 ## Steps
 1. Your calculator is going to contain functions for all of the basic math operators you typically find on simple calculators, so start by creating functions for the following items and testing them in your browser’s console.
