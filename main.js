@@ -177,6 +177,10 @@ window.addEventListener("keydown", function (event) {
         }
       }
       break;
+    case ".":
+      enableDeleteButton()
+      enableOperatorButtons()
+      updateValue('.')
     case "=":
       operate(firstOperand, secondOperand, operator)
       disableEqualButton()
