@@ -30,6 +30,169 @@ for (let numberButton of numberButtons) {
   )
 }
 
+window.addEventListener("keydown", function (event) {
+  if (event.defaultPrevented) {
+    return; // Do nothing if the event was already processed
+  }
+
+  switch (event.key) {
+    case "Backspace":
+      deleteLastCharacter()
+      break;
+    case "0":
+      enableDeleteButton()
+      enableOperatorButtons()
+      updateValue('0')
+      break;
+    case "1":
+      enableDeleteButton()
+      enableOperatorButtons()
+      updateValue('1')
+      break;
+    case "2":
+      enableDeleteButton()
+      enableOperatorButtons()
+      updateValue('2')
+      break;
+    case "3":
+      enableDeleteButton()
+      enableOperatorButtons()
+      updateValue('3')
+      break;
+    case "4":
+      enableDeleteButton()
+      enableOperatorButtons()
+      updateValue('4')
+      break;
+    case "5":
+      enableDeleteButton()
+      enableOperatorButtons()
+      updateValue('5')
+      break;
+    case "6":
+      enableDeleteButton()
+      enableOperatorButtons()
+      updateValue('6')
+      break;
+    case "7":
+      enableDeleteButton()
+      enableOperatorButtons()
+      updateValue('7')
+      break;
+    case "8":
+      enableDeleteButton()
+      enableOperatorButtons()
+      updateValue('8')
+      break;
+    case "9":
+      enableDeleteButton()
+      enableOperatorButtons()
+      updateValue('9')
+      break;
+    case "/":
+      {
+        if (operator != '') {
+          operate(firstOperand, secondOperand, operator)
+          operator = '÷'
+          firstOperand = answer
+          secondOperand = ''
+          answer = ''
+          disableOperatorButtons()
+          disableEqualButton()
+          enableDecimalButton()
+          updateDisplayCalculation()
+        }
+        else if (operator === '') {
+          operator = '÷'
+          disableOperatorButtons()
+          disableEqualButton()
+          enableDecimalButton()
+          updateDisplayCalculation()
+        }
+      }
+      break;
+    case "*":
+      {
+        if (operator != '') {
+          operate(firstOperand, secondOperand, operator)
+          operator = 'x'
+          firstOperand = answer
+          secondOperand = ''
+          answer = ''
+          disableOperatorButtons()
+          disableEqualButton()
+          enableDecimalButton()
+          updateDisplayCalculation()
+        }
+        else if (operator === '') {
+          operator = 'x'
+          disableOperatorButtons()
+          disableEqualButton()
+          enableDecimalButton()
+          updateDisplayCalculation()
+        }
+      }
+      break;
+    case "+":
+      {
+        if (operator != '') {
+          operate(firstOperand, secondOperand, operator)
+          operator = '+'
+          firstOperand = answer
+          secondOperand = ''
+          answer = ''
+          disableOperatorButtons()
+          disableEqualButton()
+          enableDecimalButton()
+          updateDisplayCalculation()
+        }
+        else if (operator === '') {
+          operator = '+'
+          disableOperatorButtons()
+          disableEqualButton()
+          enableDecimalButton()
+          updateDisplayCalculation()
+        }
+      }
+      break;
+    case "-":
+      {
+        if (operator != '') {
+          operate(firstOperand, secondOperand, operator)
+          operator = '-'
+          firstOperand = answer
+          secondOperand = ''
+          answer = ''
+          disableOperatorButtons()
+          disableEqualButton()
+          enableDecimalButton()
+          updateDisplayCalculation()
+        }
+        else if (operator === '') {
+          operator = '-'
+          disableOperatorButtons()
+          disableEqualButton()
+          enableDecimalButton()
+          updateDisplayCalculation()
+        }
+      }
+      break;
+    case "=":
+      operate(firstOperand, secondOperand, operator)
+      disableEqualButton()
+      break;
+    case "Enter":
+      operate(firstOperand, secondOperand, operator)
+      disableEqualButton()
+      break;
+    default:
+      return; // Quit when this doesn't handle the key event.
+  }
+
+  // Cancel the default action to avoid it being handled twice
+  event.preventDefault();
+}, true);
+
 for (let operatorButton of operatorButtons) {
   operatorButton.addEventListener(
     "click",
