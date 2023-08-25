@@ -40,54 +40,18 @@ window.addEventListener("keydown", function (event) {
       deleteLastCharacter()
       break;
     case "0":
-      enableDeleteButton()
-      enableOperatorButtons()
-      updateValue('0')
-      break;
     case "1":
-      enableDeleteButton()
-      enableOperatorButtons()
-      updateValue('1')
-      break;
     case "2":
-      enableDeleteButton()
-      enableOperatorButtons()
-      updateValue('2')
-      break;
     case "3":
-      enableDeleteButton()
-      enableOperatorButtons()
-      updateValue('3')
-      break;
     case "4":
-      enableDeleteButton()
-      enableOperatorButtons()
-      updateValue('4')
-      break;
     case "5":
-      enableDeleteButton()
-      enableOperatorButtons()
-      updateValue('5')
-      break;
     case "6":
-      enableDeleteButton()
-      enableOperatorButtons()
-      updateValue('6')
-      break;
     case "7":
-      enableDeleteButton()
-      enableOperatorButtons()
-      updateValue('7')
-      break;
     case "8":
-      enableDeleteButton()
-      enableOperatorButtons()
-      updateValue('8')
-      break;
     case "9":
       enableDeleteButton()
       enableOperatorButtons()
-      updateValue('9')
+      updateValue(event.key)
       break;
     case "/":
       {
@@ -112,6 +76,7 @@ window.addEventListener("keydown", function (event) {
       }
       break;
     case "*":
+    case "x":
       {
         if (operator != '') {
           operate(firstOperand, secondOperand, operator)
@@ -182,9 +147,6 @@ window.addEventListener("keydown", function (event) {
       enableOperatorButtons()
       updateValue('.')
     case "=":
-      operate(firstOperand, secondOperand, operator)
-      disableEqualButton()
-      break;
     case "Enter":
       operate(firstOperand, secondOperand, operator)
       disableEqualButton()
