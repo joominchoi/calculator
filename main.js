@@ -39,25 +39,17 @@ window.addEventListener("keydown", function (event) {
     case "Backspace":
       deleteLastCharacter()
       break;
-    case "0":
-    case "1":
-    case "2":
-    case "3":
-    case "4":
-    case "5":
-    case "6":
-    case "7":
-    case "8":
-    case "9":
+    case "0": case "1": case "2": case "3": case "4": case "5": case "6":
+    case "7": case "8": case "9":
       enableDeleteButton()
       enableOperatorButtons()
       updateValue(event.key)
       break;
-    case "/":
+    case "/": case "*": case "x": case "+": case "-":
       {
         if (operator != '') {
           operate(firstOperand, secondOperand, operator)
-          operator = '÷'
+          operator = convertOperator(event.key)
           firstOperand = answer
           secondOperand = ''
           answer = ''
@@ -67,74 +59,7 @@ window.addEventListener("keydown", function (event) {
           updateDisplayCalculation()
         }
         else if (operator === '') {
-          operator = '÷'
-          disableOperatorButtons()
-          disableEqualButton()
-          enableDecimalButton()
-          updateDisplayCalculation()
-        }
-      }
-      break;
-    case "*":
-    case "x":
-      {
-        if (operator != '') {
-          operate(firstOperand, secondOperand, operator)
-          operator = 'x'
-          firstOperand = answer
-          secondOperand = ''
-          answer = ''
-          disableOperatorButtons()
-          disableEqualButton()
-          enableDecimalButton()
-          updateDisplayCalculation()
-        }
-        else if (operator === '') {
-          operator = 'x'
-          disableOperatorButtons()
-          disableEqualButton()
-          enableDecimalButton()
-          updateDisplayCalculation()
-        }
-      }
-      break;
-    case "+":
-      {
-        if (operator != '') {
-          operate(firstOperand, secondOperand, operator)
-          operator = '+'
-          firstOperand = answer
-          secondOperand = ''
-          answer = ''
-          disableOperatorButtons()
-          disableEqualButton()
-          enableDecimalButton()
-          updateDisplayCalculation()
-        }
-        else if (operator === '') {
-          operator = '+'
-          disableOperatorButtons()
-          disableEqualButton()
-          enableDecimalButton()
-          updateDisplayCalculation()
-        }
-      }
-      break;
-    case "-":
-      {
-        if (operator != '') {
-          operate(firstOperand, secondOperand, operator)
-          operator = '-'
-          firstOperand = answer
-          secondOperand = ''
-          answer = ''
-          disableOperatorButtons()
-          disableEqualButton()
-          enableDecimalButton()
-          updateDisplayCalculation()
-        }
-        else if (operator === '') {
-          operator = '-'
+          operator = convertOperator(event.key)
           disableOperatorButtons()
           disableEqualButton()
           enableDecimalButton()
@@ -146,8 +71,7 @@ window.addEventListener("keydown", function (event) {
       enableDeleteButton()
       enableOperatorButtons()
       updateValue('.')
-    case "=":
-    case "Enter":
+    case "=": case "Enter":
       operate(firstOperand, secondOperand, operator)
       disableEqualButton()
       break;
@@ -380,6 +304,14 @@ function operate(firstOperand, secondOperand, operator) {
 function convertStringToNumber(firstOperand, secondOperand) {
   x = Number(firstOperand)
   y = Number(secondOperand)
+}
+
+function convertOperator(keyboardInput) {
+  if (keyboardInput === '/') return '÷'
+  if (keyboardInput === '*') return 'x'
+  if (keyboardInput === 'x') return 'x'
+  if (keyboardInput === '+') return '+'
+  if (keyboardInput === '-') return '-'
 }
 
 function roundResult(result) {
