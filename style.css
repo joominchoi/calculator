@@ -128,3 +128,40 @@ header {
 .operator-button:active {
   background-color: rgb(235, 129, 0);
 }
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  position: absolute;
+
+  bottom: 0;
+  left: 0;
+  
+  width: 100%;
+}
+
+#footer-signature {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+
+  gap: 10px;
+}
+
+#creator {
+  display: flex;
+  align-items: center;
+  margin: 0;
+
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 25px;
+}
+
+#github-logo {
+  transition: transform 0.3s ease;
+}
+
+#github-logo:hover {
+  transform: scale(1.2) rotate(360deg);
+}
