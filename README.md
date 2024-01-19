@@ -2,7 +2,7 @@
 
 Building an on-screen calculator using JavaScript, HTML, and CSS
 
-[Click here to check out the calculator](https://joominchoi.github.io/calculator/)
+Check out the [project](https://joominchoi.github.io/calculator/)!
 
 **Course reference pages:** \
 [Project: Calculator](https://www.theodinproject.com/lessons/foundations-calculator)
